@@ -1,21 +1,9 @@
-const swiper = new Swiper('.swiper', {
-
-  autoplay: {
-     delay: 3000,
-     disableOnInteraction: false
-   },
-
-   spaceBetween: 30,
-        effect: "fade",
-        navigation: {
-          nextEl: ".swiper-button-next",
-          prevEl: ".swiper-button-prev",
-        },
-        pagination: {
-          el: false,
-          clickable: false,
-    },
-
-  
-
+// Sungrid homepage hero slideshow
+const heroSwiper = new Swiper('.hero-swiper', {
+  loop: true,
+  effect: 'fade',
+  speed: 1000,
+  autoplay: { delay: 5000, disableOnInteraction: false },
+  fadeEffect: { crossFade: true },
+  pagination: { el: '#section-intro .swiper-pagination', clickable: true }
 });
