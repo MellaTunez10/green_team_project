@@ -1,0 +1,28 @@
+{
+  "name": "green_team_project",
+  "version": "1.0.0",
+  "description": "SunGrid Energy Nigeria Solar Calculator & Quote Portal",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MellaTunez10/green_team_project.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/MellaTunez10/green_team_project/issues"
+  },
+  "homepage": "https://github.com/MellaTunez10/green_team_project#readme",
+  "dependencies": {
+    "cors": "^2.8.6",
+    "dotenv": "^18.0.7",
+    "express": "^5.3.0",
+    "resend": "^6.32.1"
+  }
+}
