@@ -1,6 +1,7 @@
 /* ==========================================================================
    SunGrid Energy Nigeria - Solar Calculator Styles (Scoped Prefix: sc-)
    Seamlessly integrated with SunGrid Design System (Sage Green & Warm Cream Theme)
+   Fully responsive across All Screen Sizes (Mobile, Fold, Tablet, Laptop, Desktop)
    ========================================================================== */
 
 :root {
@@ -21,10 +22,11 @@
   --sc-radius: 16px;
 }
 
-/* Calculator Section Wrapper - Warm Cream Background matching site follow-section */
+/* Calculator Section Wrapper */
 .sc-section-warm {
   background-color: var(--sc-bg-cream) !important;
   color: var(--sc-text-body);
+  padding: 80px 0;
 }
 
 .sc-section-warm .subtitle {
@@ -38,6 +40,8 @@
 .sc-section-warm h2 {
   color: #263517 !important;
   font-weight: 800;
+  font-size: clamp(1.8rem, 3.5vw, 2.6rem);
+  line-height: 1.2;
 }
 
 /* Card Container */
@@ -50,6 +54,8 @@
   box-shadow: 0 15px 35px rgba(53, 69, 31, 0.08);
   margin-bottom: 40px;
   position: relative;
+  box-sizing: border-box;
+  width: 100%;
 }
 
 .sc-card h1,
@@ -67,6 +73,7 @@
 .sc-progress-bar-container {
   display: flex;
   justify-content: space-between;
+  align-items: flex-start;
   position: relative;
   margin-bottom: 40px;
 }
@@ -80,6 +87,13 @@
   height: 2px;
   background: #E5DDC6;
   z-index: 1;
+}
+
+.sc-step-item {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  flex: 1;
 }
 
 .sc-step-indicator {
@@ -119,6 +133,7 @@
   text-align: center;
   margin-top: 10px;
   font-weight: 600;
+  line-height: 1.3;
 }
 
 /* Estimation Mode Tabs */
@@ -137,12 +152,14 @@
   border-radius: 10px;
   font-weight: 600;
   font-family: var(--sc-font-body);
+  font-size: 0.95rem;
   cursor: pointer;
   transition: all 0.25s ease;
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 10px;
+  text-align: center;
 }
 
 .sc-pill-btn:hover {
@@ -170,6 +187,7 @@
   font-size: 0.95rem;
   font-family: var(--sc-font-body);
   transition: all 0.2s ease;
+  box-sizing: border-box;
 }
 
 .sc-input:focus,
@@ -197,28 +215,12 @@
   align-items: center;
   gap: 16px;
   transition: border-color 0.2s ease, background 0.2s ease;
+  box-sizing: border-box;
 }
 
 .sc-appliance-item:hover {
   border-color: var(--sc-primary);
   background: #F4F8EC;
-}
-
-@media (max-width: 768px) {
-  .sc-card {
-    padding: 24px 18px;
-  }
-  .sc-appliance-item {
-    grid-template-columns: 1fr;
-    gap: 12px;
-  }
-  .sc-nav-pills {
-    flex-direction: column;
-  }
-  .sc-progress-bar-container::before {
-    left: 20px;
-    right: 20px;
-  }
 }
 
 /* Results Section Boxes */
@@ -230,6 +232,7 @@
   text-align: center;
   height: 100%;
   transition: transform 0.25s ease, border-color 0.25s ease;
+  box-sizing: border-box;
 }
 
 .sc-result-stat-box:hover {
@@ -240,11 +243,12 @@
 
 .sc-result-stat-box .sc-number {
   font-family: var(--sc-font-heading);
-  font-size: 2.2rem;
+  font-size: clamp(1.75rem, 3vw, 2.2rem);
   font-weight: 800;
   color: var(--sc-accent);
   margin-top: 8px;
   line-height: 1.15;
+  word-break: break-word;
 }
 
 .sc-badge {
@@ -269,6 +273,7 @@
   padding: 22px 26px;
   overflow: hidden;
   box-sizing: border-box;
+  width: 100%;
 }
 
 .sc-investment-banner-grid {
@@ -284,6 +289,11 @@
   min-width: 0;
 }
 
+.sc-investment-banner-info #sc-res-price-range {
+  font-size: clamp(1.3rem, 2.8vw, 1.75rem);
+  line-height: 1.25;
+}
+
 .sc-investment-banner-note {
   flex: 1 1 280px;
   min-width: 0;
@@ -293,21 +303,14 @@
   line-height: 1.5;
 }
 
-@media (max-width: 768px) {
-  .sc-investment-banner {
-    padding: 18px 20px;
-  }
-  .sc-investment-banner-note {
-    max-width: 100%;
-  }
-}
-
 /* Config Summary Preview Box */
 .sc-summary-box {
   background: var(--sc-surface-subtle);
   border: 1px solid #D5DEC1;
   border-radius: 10px;
   padding: 18px 22px;
+  box-sizing: border-box;
+  word-break: break-word;
 }
 
 /* Alert/Notice Styling */
@@ -321,4 +324,119 @@
   background: #FDEDEE;
   border: 1px solid #F5C2C7;
   color: #842029;
+}
+
+/* ==========================================================================
+   Responsive Breakpoints: Tablets, Phones & Small Displays
+   ========================================================================== */
+
+/* Tablet & Mobile (< 992px) */
+@media (max-width: 991.98px) {
+  .sc-section-warm {
+    padding: 60px 0;
+  }
+  .sc-card {
+    padding: 30px 22px;
+  }
+  .sc-appliance-item {
+    grid-template-columns: 1.8fr 1fr 1fr 1fr;
+    gap: 12px;
+    padding: 12px 16px;
+  }
+}
+
+/* Standard Mobile & Small Tablets (< 768px) */
+@media (max-width: 767.98px) {
+  .sc-section-warm {
+    padding: 45px 0;
+  }
+  .sc-card {
+    padding: 22px 15px;
+    border-radius: 12px;
+  }
+  .sc-progress-bar-container {
+    margin-bottom: 28px;
+  }
+  .sc-progress-bar-container::before {
+    top: 18px;
+    left: 20px;
+    right: 20px;
+  }
+  .sc-step-indicator {
+    width: 38px;
+    height: 38px;
+    font-size: 0.9rem;
+  }
+  .sc-step-label {
+    font-size: 0.76rem;
+    margin-top: 6px;
+  }
+  .sc-nav-pills {
+    flex-direction: column;
+    gap: 10px;
+  }
+  .sc-pill-btn {
+    padding: 11px 16px;
+    font-size: 0.88rem;
+  }
+  .sc-appliance-item {
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    padding: 14px 12px;
+  }
+  .sc-appliance-item > div:first-child {
+    grid-column: 1 / -1;
+    margin-bottom: 4px;
+  }
+  .sc-investment-banner {
+    padding: 18px 16px;
+  }
+  .sc-investment-banner-grid {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+  .sc-investment-banner-note {
+    max-width: 100%;
+    font-size: 0.82rem;
+  }
+  .sc-card .btn-main {
+    width: 100%;
+    text-align: center;
+    justify-content: center;
+    display: inline-flex;
+  }
+}
+
+/* Small Handhelds & Fold Devices (< 480px) */
+@media (max-width: 480px) {
+  .sc-card {
+    padding: 18px 12px;
+  }
+  .sc-step-indicator {
+    width: 34px;
+    height: 34px;
+    font-size: 0.82rem;
+  }
+  .sc-step-label {
+    font-size: 0.7rem;
+  }
+  .sc-appliance-item {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+  .sc-appliance-item > div:first-child {
+    grid-column: 1;
+  }
+  .sc-result-stat-box {
+    padding: 18px 14px;
+  }
+  .sc-result-stat-box .sc-number {
+    font-size: 1.6rem;
+  }
+  .sc-input,
+  .sc-select {
+    padding: 9px 12px;
+    font-size: 0.9rem;
+  }
 }

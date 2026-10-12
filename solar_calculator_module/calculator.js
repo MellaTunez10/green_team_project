@@ -57,7 +57,7 @@
           </div>
         </div>
         <div>
-          <label class="d-block d-md-none text-muted small mb-1">Quantity</label>
+          <label class="d-block d-md-none small mb-1 fw-bold" style="color: var(--sc-text-muted, #667052); font-size: 0.8rem;">Quantity</label>
           <input 
             type="number" 
             class="sc-input sc-app-qty" 
@@ -69,7 +69,7 @@
           />
         </div>
         <div>
-          <label class="d-block d-md-none text-muted small mb-1">Watts</label>
+          <label class="d-block d-md-none small mb-1 fw-bold" style="color: var(--sc-text-muted, #667052); font-size: 0.8rem;">Watts</label>
           <input 
             type="number" 
             class="sc-input sc-app-watts" 
@@ -79,7 +79,7 @@
           />
         </div>
         <div>
-          <label class="d-block d-md-none text-muted small mb-1">Hours / Day</label>
+          <label class="d-block d-md-none small mb-1 fw-bold" style="color: var(--sc-text-muted, #667052); font-size: 0.8rem;">Hours / Day</label>
           <input 
             type="number" 
             class="sc-input sc-app-hours" 
