@@ -1,0 +1,324 @@
+/* ==========================================================================
+   SunGrid Energy Nigeria - Solar Calculator Styles (Scoped Prefix: sc-)
+   Seamlessly integrated with SunGrid Design System (Sage Green & Warm Cream Theme)
+   ========================================================================== */
+
+:root {
+  --sc-primary: var(--primary-color, #718447);
+  --sc-accent: var(--accent-color, #536B2E);
+  --sc-primary-hover: var(--button-hover-color, #405521);
+  --sc-bg-cream: var(--background-color, #F1EBD7);
+  --sc-surface-cream: #FFFFFF;
+  --sc-surface-subtle: #F7F4EB;
+  --sc-dark-1: var(--bg-dark-1, #35451F);
+  --sc-dark-2: var(--bg-dark-2, #263517);
+  --sc-border-soft: var(--border-soft, #B8C99A);
+  --sc-text-title: #263517;
+  --sc-text-body: #35451F;
+  --sc-text-muted: #667052;
+  --sc-font-heading: var(--heading-font, "Inter Tight", sans-serif);
+  --sc-font-body: var(--body-font, "Manrope", sans-serif);
+  --sc-radius: 16px;
+}
+
+/* Calculator Section Wrapper - Warm Cream Background matching site follow-section */
+.sc-section-warm {
+  background-color: var(--sc-bg-cream) !important;
+  color: var(--sc-text-body);
+}
+
+.sc-section-warm .subtitle {
+  color: #405521 !important;
+  font-weight: 700;
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+}
+
+.sc-section-warm h2 {
+  color: #263517 !important;
+  font-weight: 800;
+}
+
+/* Card Container */
+.sc-card {
+  font-family: var(--sc-font-body);
+  background: var(--sc-surface-cream);
+  border: 1px solid rgba(184, 201, 154, 0.45);
+  border-radius: var(--sc-radius);
+  padding: 40px;
+  box-shadow: 0 15px 35px rgba(53, 69, 31, 0.08);
+  margin-bottom: 40px;
+  position: relative;
+}
+
+.sc-card h1,
+.sc-card h2,
+.sc-card h3,
+.sc-card h4,
+.sc-card h5,
+.sc-card h6 {
+  font-family: var(--sc-font-heading);
+  letter-spacing: -0.02em;
+  color: var(--sc-text-title) !important;
+}
+
+/* Wizard Progress Bar */
+.sc-progress-bar-container {
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  margin-bottom: 40px;
+}
+
+.sc-progress-bar-container::before {
+  content: "";
+  position: absolute;
+  top: 23px;
+  left: 35px;
+  right: 35px;
+  height: 2px;
+  background: #E5DDC6;
+  z-index: 1;
+}
+
+.sc-step-indicator {
+  position: relative;
+  z-index: 2;
+  background: #FFFFFF;
+  border: 2px solid #D5DEC1;
+  color: var(--sc-text-muted);
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-family: var(--sc-font-heading);
+  transition: all 0.3s cubic-bezier(0.2, 0.8, 0.2, 1);
+  margin: 0 auto;
+}
+
+.sc-step-indicator.active {
+  border-color: var(--sc-primary);
+  background: var(--sc-primary);
+  color: #ffffff;
+  box-shadow: 0 4px 15px rgba(113, 132, 71, 0.35);
+}
+
+.sc-step-indicator.completed {
+  border-color: var(--sc-accent);
+  background: #EAF0DD;
+  color: var(--sc-accent);
+}
+
+.sc-step-label {
+  font-size: 0.9rem;
+  color: var(--sc-text-muted);
+  text-align: center;
+  margin-top: 10px;
+  font-weight: 600;
+}
+
+/* Estimation Mode Tabs */
+.sc-nav-pills {
+  display: flex;
+  gap: 14px;
+  margin-bottom: 26px;
+}
+
+.sc-pill-btn {
+  flex: 1;
+  padding: 13px 20px;
+  background: var(--sc-surface-subtle);
+  border: 1px solid #D5DEC1;
+  color: var(--sc-text-body);
+  border-radius: 10px;
+  font-weight: 600;
+  font-family: var(--sc-font-body);
+  cursor: pointer;
+  transition: all 0.25s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.sc-pill-btn:hover {
+  border-color: var(--sc-primary);
+  background: #EDF3E1;
+  color: var(--sc-text-title);
+}
+
+.sc-pill-btn.active {
+  background: var(--sc-primary);
+  color: #ffffff;
+  border-color: var(--sc-primary);
+  box-shadow: 0 4px 12px rgba(113, 132, 71, 0.3);
+}
+
+/* Inputs, Selects & Textarea */
+.sc-input,
+.sc-select {
+  width: 100%;
+  background: #FFFFFF;
+  border: 1px solid #C8D8A9;
+  color: var(--sc-text-body);
+  padding: 11px 16px;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  font-family: var(--sc-font-body);
+  transition: all 0.2s ease;
+}
+
+.sc-input:focus,
+.sc-select:focus {
+  outline: none;
+  border-color: var(--sc-primary);
+  box-shadow: 0 0 0 3px rgba(113, 132, 71, 0.2);
+  background: #FFFFFF;
+}
+
+.sc-input::placeholder,
+.sc-select::placeholder {
+  color: #9AA782;
+}
+
+/* Appliance Rows */
+.sc-appliance-item {
+  background: var(--sc-surface-subtle);
+  border: 1px solid #E2EAD2;
+  border-radius: 10px;
+  padding: 14px 20px;
+  margin-bottom: 12px;
+  display: grid;
+  grid-template-columns: 2.2fr 1fr 1fr 1fr;
+  align-items: center;
+  gap: 16px;
+  transition: border-color 0.2s ease, background 0.2s ease;
+}
+
+.sc-appliance-item:hover {
+  border-color: var(--sc-primary);
+  background: #F4F8EC;
+}
+
+@media (max-width: 768px) {
+  .sc-card {
+    padding: 24px 18px;
+  }
+  .sc-appliance-item {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+  .sc-nav-pills {
+    flex-direction: column;
+  }
+  .sc-progress-bar-container::before {
+    left: 20px;
+    right: 20px;
+  }
+}
+
+/* Results Section Boxes */
+.sc-result-stat-box {
+  background: var(--sc-surface-subtle);
+  border: 1px solid #D5DEC1;
+  border-radius: 14px;
+  padding: 26px 20px;
+  text-align: center;
+  height: 100%;
+  transition: transform 0.25s ease, border-color 0.25s ease;
+}
+
+.sc-result-stat-box:hover {
+  transform: translateY(-3px);
+  border-color: var(--sc-primary);
+  box-shadow: 0 8px 20px rgba(53, 69, 31, 0.08);
+}
+
+.sc-result-stat-box .sc-number {
+  font-family: var(--sc-font-heading);
+  font-size: 2.2rem;
+  font-weight: 800;
+  color: var(--sc-accent);
+  margin-top: 8px;
+  line-height: 1.15;
+}
+
+.sc-badge {
+  display: inline-block;
+  padding: 5px 12px;
+  border-radius: 20px;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  background: rgba(113, 132, 71, 0.15);
+  color: var(--sc-accent);
+  border: 1px solid rgba(113, 132, 71, 0.25);
+}
+
+/* Turnkey Investment Banner */
+.sc-investment-banner {
+  background: #EDF3E1;
+  border: 1px solid #C8D8A9;
+  border-left: 5px solid var(--sc-primary);
+  border-radius: 12px;
+  padding: 22px 26px;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+.sc-investment-banner-grid {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.sc-investment-banner-info {
+  flex: 1 1 280px;
+  min-width: 0;
+}
+
+.sc-investment-banner-note {
+  flex: 1 1 280px;
+  min-width: 0;
+  max-width: 440px;
+  color: var(--sc-text-muted);
+  font-size: 0.88rem;
+  line-height: 1.5;
+}
+
+@media (max-width: 768px) {
+  .sc-investment-banner {
+    padding: 18px 20px;
+  }
+  .sc-investment-banner-note {
+    max-width: 100%;
+  }
+}
+
+/* Config Summary Preview Box */
+.sc-summary-box {
+  background: var(--sc-surface-subtle);
+  border: 1px solid #D5DEC1;
+  border-radius: 10px;
+  padding: 18px 22px;
+}
+
+/* Alert/Notice Styling */
+.sc-alert-success {
+  background: #EAF3DF;
+  border: 1px solid var(--sc-primary);
+  color: var(--sc-accent);
+}
+
+.sc-alert-danger {
+  background: #FDEDEE;
+  border: 1px solid #F5C2C7;
+  color: #842029;
+}
