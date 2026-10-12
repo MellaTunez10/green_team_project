@@ -15060,3 +15060,15 @@ header div#logo img.logo-mobile {
   }
   .logo-footer { width: 205px; }
 }
+/* responsive map */
+.map-container iframe {
+    width: 50%;
+    height: 250px;
+    display: block;
+}
+
+@media (max-width: 768px) {
+    .map-container iframe {
+        height: 100px;
+    }
+}

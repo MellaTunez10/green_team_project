@@ -152,26 +152,26 @@
                                 <div class="col-lg-6">
                                     <div class="d-flex align-items-center fw-bold text-dark"><i
                                             class="icofont-clock-time me-2 id-color"></i><span>We're Open</span></div>
-                                    Monday - Friday 08.00 - 18.00
+                                    Monday - Friday 08.00am - 18.00pm
                                 </div>
 
                                 <div class="col-lg-6">
                                     <div class="d-flex align-items-center fw-bold text-dark"><i
                                             class="icofont-location-pin me-2 id-color"></i><span>Office Location</span>
                                     </div>
-                                    100 Solar Ave, San Diego, CA
+                                    Plot 1504, Cadzone B06, after the Ministry of Transportation, Mabushi, Abuja 
                                 </div>
 
                                 <div class="col-lg-6">
                                     <div class="d-flex align-items-center fw-bold text-dark"><i
                                             class="icofont-phone me-2 id-color"></i><span>Call Us Directly</span></div>
-                                    +1 800 987 654
+                                    +234 567 890 123
                                 </div>
 
                                 <div class="col-lg-6">
                                     <div class="d-flex align-items-center fw-bold text-dark"><i
                                             class="icofont-envelope me-2 id-color"></i><span>Send a Message</span></div>
-                                    support@solaria.com
+                                    support@sungrid.com
                                 </div>
                             </div>
 
@@ -236,6 +236,30 @@
 
         </div>
         <!-- content end -->
+
+         <!-- Google Map Section Begin -->
+<section class="no-top no-bottom" aria-label="map section">
+    <div class="container-fluid p-0">
+        <div class="row g-0">
+            <div class="col-lg-12">
+                <div style="width: 100%; height: 450px;">
+                
+                        <iframe 
+                        src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d8083758.291709097!2d0.5448717818610918!3d8.387139427819791!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1sLanre%20Shittu%20Motors!5e0!3m2!1sen!2sng!4v1791785539172!5m2!1sen!2sng" 
+                        width="600" 
+                        height="450" 
+                        style="border:0;" 
+                        allowfullscreen="" 
+                        loading="lazy" 
+                        referrerpolicy="strict-origin-when-cross-origin">
+                    </iframe>" 
+                        
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Google Map Section End -->
 
         <!-- footer begin -->
         <footer class="section-dark">
@@ -401,12 +425,38 @@
 
         </div>
     </div>
+    
 
     <!-- Javascript Files
     ================================================== -->
     <script src="js/plugins.js"></script>
     <script src="js/designesia.js"></script>
     <script src="js/validation-contact.html"></script>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+    $('#contact_form').on('submit', function(e) {
+        e.preventDefault(); // Prevent default page refresh/redirect
+
+        var $btn = $('#send_message');
+        $btn.val('Sent').prop('disabled', true); // Change button text to Sent and disable it
+
+        // Show the success message below the button
+        $('#success_message').fadeIn();
+        $('#error_message').hide();
+    });
+</script>
+
+<style>
+/* Custom styling for compact success message */
+#success_message {
+    font-size: 11px;
+    color: rgba(255, 255, 255, .8) !important;
+    margin-top: 10px;
+    display: none;
+    line-height: 1.3;
+}
+</style>
 
 </body>
 
