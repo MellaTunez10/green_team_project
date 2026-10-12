@@ -1,26 +1,363 @@
 <!DOCTYPE html>
 <html lang="en">
 
-
-<!-- Mirrored from https://www.designesia.com/themes/solaria/projects.html by HTTrack Website Copier/3.x [XR&CO], Sun, 04 Oct 2026 20:13:36 GMT -->
-
 <head>
-    <title>Solaria - Solar Energy HTML Template</title>
+    <title>Solar Products & Accessories | Sungrid Clean Energy</title>
     <link rel="icon" href="images/icon.webp" type="image/gif" sizes="16x16">
     <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
-    <meta content="Solaria - Ecology & Solar Energy HTML Template" name="description">
-    <meta content="" name="keywords">
-    <meta content="" name="author">
+    <meta
+        content="Explore Sungrid's premium range of solar products and accessories: high-efficiency solar panels, hybrid inverters, deep cycle batteries, solar generators, and street lights."
+        name="description">
+    <meta
+        content="solar products, solar panels, hybrid inverters, solar batteries, solar generators, MPPT charge controllers, street lights"
+        name="keywords">
+    <meta content="Sungrid" name="author">
+
     <!-- CSS Files
     ================================================== -->
     <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css" id="bootstrap">
     <link href="css/plugins.css" rel="stylesheet" type="text/css">
     <link href="css/swiper.css" rel="stylesheet" type="text/css">
     <link href="css/style.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
     <!-- color scheme -->
     <link id="colors" href="css/colors/scheme-1.css" rel="stylesheet" type="text/css">
 
+    <style>
+        /* Product Page Custom Styles matching Gennex layout with Project CSS Design System */
+        .product-nav-bar {
+            background: #ffffff;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+            position: sticky;
+            top: 75px;
+            z-index: 99;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
+            transition: all 0.3s ease;
+        }
+
+        .product-nav-scroll {
+            display: flex;
+            align-items: center;
+            overflow-x: auto;
+            white-space: nowrap;
+            scrollbar-width: none;
+            padding: 12px 0;
+            gap: 10px;
+        }
+
+        .product-nav-scroll::-webkit-scrollbar {
+            display: none;
+        }
+
+        .product-nav-link {
+            padding: 7px 18px;
+            font-size: 13.5px;
+            font-weight: 600;
+            color: var(--heading-font-color);
+            border-radius: 30px;
+            background: #f4f6f0;
+            transition: all 0.25s ease;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .product-nav-link:hover,
+        .product-nav-link.active {
+            background: var(--primary-color);
+            color: #ffffff !important;
+            box-shadow: 0 3px 10px rgba(113, 132, 71, 0.3);
+        }
+
+        .product-category-section {
+            padding: 70px 0;
+            position: relative;
+        }
+
+        .product-category-section:nth-child(even) {
+            background-color: #fbfbf9;
+        }
+
+        .category-header {
+            margin-bottom: 40px;
+            position: relative;
+        }
+
+        .category-badge {
+            font-family: var(--body-font);
+            font-size: 13px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--primary-color);
+            background: rgba(113, 132, 71, 0.12);
+            padding: 6px 16px;
+            border-radius: 20px;
+            display: inline-block;
+            margin-bottom: 12px;
+        }
+
+        .category-title {
+            font-family: var(--h2-font);
+            font-weight: var(--h2-font-weight);
+            font-size: var(--h2-font-size);
+            letter-spacing: var(--h2-letter-spacing);
+            line-height: var(--h2-line-height);
+            color: var(--heading-font-color);
+            margin-bottom: var(--h2-margin-bottom);
+            position: relative;
+        }
+
+        .category-title::after {
+            content: '';
+            display: block;
+            width: 50px;
+            height: 3px;
+            background: var(--primary-color);
+            border-radius: 2px;
+            margin-top: 14px;
+        }
+
+        /* Product Card Styles */
+        .gennex-card {
+            background: #ffffff;
+            border: 1px solid rgba(0, 0, 0, 0.07);
+            border-radius: 12px;
+            overflow: hidden;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            transition: all 0.35s cubic-bezier(0.165, 0.84, 0.44, 1);
+            box-shadow: 0 4px 18px rgba(0, 0, 0, 0.04);
+            position: relative;
+        }
+
+        .gennex-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 16px 36px rgba(53, 69, 31, 0.12);
+            border-color: var(--primary-color);
+        }
+
+        .gennex-card-img-wrap {
+            position: relative;
+            background: #fdfdfd;
+            padding: 24px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 250px;
+            max-height: 270px;
+            overflow: hidden;
+            border-bottom: 1px solid #f0f2eb;
+        }
+
+        .gennex-card-img-wrap img {
+            max-height: 210px;
+            max-width: 100%;
+            object-fit: contain;
+            transition: transform 0.4s ease;
+        }
+
+        .gennex-card:hover .gennex-card-img-wrap img {
+            transform: scale(1.06);
+        }
+
+        .gennex-card-body {
+            padding: 24px 22px;
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+        }
+
+        .gennex-card-title {
+            font-family: var(--heading-font);
+            font-size: var(--h4-font-size);
+            font-weight: var(--h4-font-weight);
+            letter-spacing: var(--h4-letter-spacing);
+            line-height: var(--h4-line-height);
+            color: var(--heading-font-color);
+            margin-bottom: var(--h4-margin-bottom);
+        }
+
+        .gennex-card-text {
+            font-family: var(--body-font);
+            font-size: var(--body-font-size);
+            font-weight: var(--body-font-weight);
+            line-height: 1.7em;
+            color: var(--body-font-color);
+            margin-bottom: 22px;
+            flex-grow: 1;
+        }
+
+        .gennex-card-footer {
+            margin-top: auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 10px;
+        }
+
+        /* 2-Column Feature Card Layout */
+        .gennex-feature-card {
+            background: #ffffff;
+            border: 1px solid rgba(0, 0, 0, 0.07);
+            border-radius: 14px;
+            padding: 30px;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            box-shadow: 0 6px 22px rgba(0, 0, 0, 0.04);
+            transition: all 0.35s ease;
+        }
+
+        .gennex-feature-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--primary-color);
+            box-shadow: 0 16px 36px rgba(53, 69, 31, 0.12);
+        }
+
+        .gennex-feature-title {
+            font-family: var(--heading-font);
+            font-size: var(--h3-font-size);
+            font-weight: var(--h3-font-weight);
+            letter-spacing: var(--h3-letter-spacing);
+            line-height: var(--h3-line-height);
+            color: var(--heading-font-color);
+            margin-bottom: var(--h3-margin-bottom);
+        }
+
+        .gennex-feature-img-wrap {
+            background: #fdfdfd;
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 22px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 240px;
+            border: 1px solid #f2f4ec;
+        }
+
+        .gennex-feature-img-wrap img {
+            max-height: 220px;
+            max-width: 100%;
+            object-fit: contain;
+            transition: transform 0.4s ease;
+        }
+
+        .gennex-feature-card:hover .gennex-feature-img-wrap img {
+            transform: scale(1.04);
+        }
+
+        /* Split Row Layout (Image left / Text right) */
+        .gennex-split-row {
+            background: #ffffff;
+            border: 1px solid rgba(0, 0, 0, 0.07);
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.04);
+            margin-bottom: 40px;
+            transition: all 0.35s ease;
+        }
+
+        .gennex-split-row:hover {
+            box-shadow: 0 18px 40px rgba(53, 69, 31, 0.12);
+            border-color: var(--primary-color);
+        }
+
+        .gennex-split-img-box {
+            background: #fafbfa;
+            padding: 35px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100%;
+            min-height: 320px;
+            border-right: 1px solid #f0f2eb;
+        }
+
+        .gennex-split-img-box img {
+            max-height: 280px;
+            max-width: 100%;
+            object-fit: contain;
+            transition: transform 0.4s ease;
+        }
+
+        .gennex-split-row:hover .gennex-split-img-box img {
+            transform: scale(1.05);
+        }
+
+        .gennex-split-content {
+            padding: 40px 35px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        /* Inquiry & Order Section */
+        .inquiry-section {
+            background: linear-gradient(135deg, #263517 0%, #35451F 100%);
+            color: #ffffff;
+            padding: 85px 0;
+            position: relative;
+        }
+
+        .inquiry-card {
+            background: #ffffff;
+            color: #333333;
+            border-radius: 16px;
+            padding: 40px;
+            box-shadow: 0 20px 45px rgba(0, 0, 0, 0.25);
+        }
+
+        .inquiry-contact-card {
+            background: rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(8px);
+            border-radius: 14px;
+            padding: 28px;
+            margin-bottom: 24px;
+            transition: all 0.3s ease;
+        }
+
+        .inquiry-contact-card:hover {
+            background: rgba(255, 255, 255, 0.12);
+            transform: translateY(-3px);
+            border-color: var(--secondary-color);
+        }
+
+        .contact-icon-circle {
+            width: 48px;
+            height: 48px;
+            background: var(--primary-color);
+            color: #ffffff;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+            margin-bottom: 16px;
+        }
+
+        /* Order Modal */
+        .modal-content {
+            border-radius: 14px;
+            overflow: hidden;
+            border: none;
+            box-shadow: 0 25px 60px rgba(0, 0, 0, 0.3);
+        }
+
+        .modal-header {
+            background: #35451F;
+            color: #ffffff;
+            padding: 20px 28px;
+            border: none;
+        }
+
+        .modal-header .btn-close {
+            filter: invert(1);
+        }
+    </style>
 </head>
 
 <body>
@@ -43,13 +380,19 @@
                                         <a href="#"><i class="icofont-location-pin"></i>Mabushi, F.C.T., Abuja</a>
                                     </div>
                                     <div class="topbar-widget me-5">
-                                        <a href="#"><i class="icofont-phone"></i>+234 9076660060</a>
+                                        <a href="tel:+2349076660060"><i class="icofont-phone"></i>+234 9076660060</a>
                                     </div>
                                     <div class="topbar-widget me-5">
-                                        <a href="#"><i class="icofont-envelope"></i>hello@sungrid.com</a>
+                                        <a href="mailto:hello@sungrid.com"><i
+                                                class="icofont-envelope"></i>hello@sungrid.com</a>
                                     </div>
                                 </div>
-
+                                <div class="d-flex">
+                                    <div class="topbar-widget me-3">
+                                        <a href="https://wa.me/2349076660060" target="_blank"><i
+                                                class="fa-brands fa-whatsapp text-white"></i> WhatsApp Sales</a>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -67,13 +410,12 @@
                                     <a href="index.html">
                                         <img class="logo-main" src="images/sungrid-logo.png"
                                             alt="Sungrid clean energy logo" />
-                                        <!-- <img class="logo-mobile" src="images/sungrid-logo.png" alt="Sungrid clean energy logo" /> -->
                                     </a>
                                 </div>
                                 <!-- logo end -->
                             </div>
                             <div class="de-flex-col header-col-mid">
-                                <!-- mainemenu begin -->
+                                <!-- mainmenu begin -->
                                 <ul id="mainmenu">
                                     <li>
                                         <a class="menu-item" href="index.html">Home</a>
@@ -85,9 +427,8 @@
                                         <a class="menu-item" href="services.html">Services</a>
                                     </li>
                                     <li>
-                                        <a class="menu-item" href="product.html">Product</a>
+                                        <a class="menu-item active" href="product.html">Products</a>
                                     </li>
-
                                     <li>
                                         <a class="menu-item" href="contact.html">Contact</a>
                                     </li>
@@ -112,186 +453,213 @@
             </div>
         </header>
         <!-- header end -->
+
         <!-- content begin -->
         <div class="no-bottom no-top" id="content">
-
             <div id="top"></div>
 
+            <!-- HERO SUBHEADER -->
             <section id="subheader" class="bg-dark text-light relative jarallax">
-                <img src="images/background/3.webp" class="jarallax-img" alt="">
+                <img src="images/background/teamg2.jpeg" class="jarallax-img" alt="SunGrid Solar Products">
+
                 <div class="container relative z-2">
                     <div class="row gy-4 gx-5 align-items-center">
-                        <div class="col-lg-12">
+                        <div class="col-lg-7">
                             <div class="spacer-double sm-hide"></div>
-                            <h5 class="wow fadeInUp">Power Your Future with Clean Energy</h5>
-                            <h1 class="mb-3 wow fadeInUp" data-wow-delay=".2s">Our Projects</h1>
-                            <div class="border-bottom mb-3"></div>
-                            <ul class="crumb wow fadeInUp">
+
+                            <div
+                                class="d-inline-flex align-items-center gap-2 px-3 py-1 mb-3 rounded-pill wow fadeInUp">
+                                <h5 class="wow fadeInUp" style="color: #A3B878; margin-bottom: 0;">Clean Energy Hardware
+                                </h5>
+                            </div>
+
+                            <h1 class="mb-3 wow fadeInUp" data-wow-delay=".2s"
+                                style="font-size: clamp(2.4rem, 4.5vw, 3.8rem); line-height: 1.15; font-weight: 800; letter-spacing: -0.5px;">
+                                OUR PRODUCTS
+                            </h1>
+
+                            <p class="lead mb-4 wow fadeInUp" data-wow-delay=".3s"
+                                style="font-size: 1.15rem; line-height: 1.65; max-width: 580px; color: rgba(255, 255, 255, 0.88);">
+                                Premium tier-1 solar panels, intelligent hybrid inverters, long-life lithium battery
+                                storage, solar generators, and precision accessories.
+                            </p>
+
+                            <div class="d-flex flex-wrap align-items-center gap-3 mb-4 wow fadeInUp"
+                                data-wow-delay=".4s">
+                                <a href="#solar-panels" class="btn-main fx-slide"><span>Explore Products</span></a>
+                                <a href="contact.html" class="btn-main btn-line fx-slide hover-white"><span>Get a
+                                        Quote</span></a>
+                            </div>
+
+                            <div class="border-bottom mb-3 opacity-25" style="max-width: 480px;"></div>
+
+                            <ul class="crumb mb-0 wow fadeInUp" data-wow-delay=".5s" style="margin-bottom: 0;">
                                 <li><a href="index.html">Home</a></li>
-                                <li class="active">Our Projects</li>
+                                <li class="active">Our Products</li>
                             </ul>
+                        </div>
+
+                        <!-- Right Column: Featured Product Showcase Banner (Plain Style) -->
+                        <div class="col-lg-5 wow fadeInRight" data-wow-delay=".3s">
+                            <div class="position-relative p-0 rounded-4 overflow-hidden">
+                                <div class="rounded-3 overflow-hidden text-center p-3 mb-3"
+                                    style="background: rgba(255, 255, 255, 0.04); border: 1px solid rgba(255, 255, 255, 0.09); min-height: 220px; display: flex; align-items: center; justify-content: center;">
+                                    <img src="images/products/Gennex-Solar-Generator-Mobile-View.png"
+                                        alt="All-In-One Solar Generators & Inverters" class="img-fluid"
+                                        style="max-height: 195px; object-fit: contain;">
+                                </div>
+
+                                <div class="d-flex align-items-center justify-content-between pt-1">
+                                    <div class="pe-2">
+                                        <h5 class="text-white mb-1 fs-18 fw-bold">All-In-One Solar Generators &
+                                            Inverters</h5>
+                                        <p class="text-white-50 mb-0 fs-13">Lithium Storage &bull; Pure Sine Wave &bull;
+                                            Up to 30 Yrs Life</p>
+                                    </div>
+                                    <a href="#solar-generators" class="btn-main btn-sm px-4 py-2 fx-slide"
+                                        style="border-radius: 8px;">
+                                        <span>View</span>
+                                    </a>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
 
                 <div class="gradient-edge-bottom h-50"></div>
-                <div class="sw-overlay"></div>
-            </section>
-
-            <section>
-                <div class="container">
-
-                    <div class="row g-4">
-                        <div class="col-lg-4 col-md-6">
-                            <a href="project-single.html">
-                                <div class="hover rounded-1 relative overflow-hidden text-light">
-                                    <div class="abs p-40 top-0 z-3">
-                                        <img src="images/misc/up-right-arrow-white.webp" class="w-10 mb-3 wow scaleIn"
-                                            alt="">
-                                    </div>
-                                    <div class="abs p-40 bottom-0 z-3">
-                                        <h3>BrightHome Energy</h3>
-                                        <p class="mb-0 hover-mh-60">Home Installation</p>
-                                    </div>
-                                    <div class="hover-op-05 bg-dark abs w-100 h-100 top-0 start-0 z-2"></div>
-                                    <img src="images/projects/1.webp" class="w-100 hover-scale-1-2" alt="">
-                                    <div class="gradient-edge-bottom h-50"></div>
-                                </div>
-                            </a>
-                        </div>
-
-                        <div class="col-lg-4 col-md-6">
-                            <a href="project-single.html">
-                                <div class="hover rounded-1 relative overflow-hidden text-light">
-                                    <div class="abs p-40 top-0 z-3">
-                                        <img src="images/misc/up-right-arrow-white.webp" class="w-10 mb-3 wow scaleIn"
-                                            alt="">
-                                    </div>
-                                    <div class="abs p-40 bottom-0 z-3">
-                                        <h3>GreenMart Supermarket</h3>
-                                        <p class="mb-0 hover-mh-60">Solar Panel Upgrades</p>
-                                    </div>
-                                    <div class="hover-op-05 bg-dark abs w-100 h-100 top-0 start-0 z-2"></div>
-                                    <img src="images/projects/2.webp" class="w-100 hover-scale-1-2" alt="">
-                                    <div class="gradient-edge-bottom h-50"></div>
-                                </div>
-                            </a>
-                        </div>
-
-                        <div class="col-lg-4 col-md-6">
-                            <a href="project-single.html">
-                                <div class="hover rounded-1 relative overflow-hidden text-light">
-                                    <div class="abs p-40 top-0 z-3">
-                                        <img src="images/misc/up-right-arrow-white.webp" class="w-10 mb-3 wow scaleIn"
-                                            alt="">
-                                    </div>
-                                    <div class="abs p-40 bottom-0 z-3">
-                                        <h3>EcoSchool Initiative</h3>
-                                        <p class="mb-0 hover-mh-60">Custom System Design</p>
-                                    </div>
-                                    <div class="hover-op-05 bg-dark abs w-100 h-100 top-0 start-0 z-2"></div>
-                                    <img src="images/projects/3.webp" class="w-100 hover-scale-1-2" alt="">
-                                    <div class="gradient-edge-bottom h-50"></div>
-                                </div>
-                            </a>
-                        </div>
-
-                        <div class="col-lg-4 col-md-6">
-                            <a href="project-single.html">
-                                <div class="hover rounded-1 relative overflow-hidden text-light">
-                                    <div class="abs p-40 top-0 z-3">
-                                        <img src="images/misc/up-right-arrow-white.webp" class="w-10 mb-3 wow scaleIn"
-                                            alt="">
-                                    </div>
-                                    <div class="abs p-40 bottom-0 z-3">
-                                        <h3>UrbanSolar 360</h3>
-                                        <p class="mb-0 hover-mh-60">System Monitoring & Reporting</p>
-                                    </div>
-                                    <div class="hover-op-05 bg-dark abs w-100 h-100 top-0 start-0 z-2"></div>
-                                    <img src="images/projects/4.webp" class="w-100 hover-scale-1-2" alt="">
-                                    <div class="gradient-edge-bottom h-50"></div>
-                                </div>
-                            </a>
-                        </div>
-
-                        <div class="col-lg-4 col-md-6">
-                            <a href="project-single.html">
-                                <div class="hover rounded-1 relative overflow-hidden text-light">
-                                    <div class="abs p-40 top-0 z-3">
-                                        <img src="images/misc/up-right-arrow-white.webp" class="w-10 mb-3 wow scaleIn"
-                                            alt="">
-                                    </div>
-                                    <div class="abs p-40 bottom-0 z-3">
-                                        <h3>Solaria Cares</h3>
-                                        <p class="mb-0 hover-mh-60">Community Project</p>
-                                    </div>
-                                    <div class="hover-op-05 bg-dark abs w-100 h-100 top-0 start-0 z-2"></div>
-                                    <img src="images/projects/5.webp" class="w-100 hover-scale-1-2" alt="">
-                                    <div class="gradient-edge-bottom h-50"></div>
-                                </div>
-                            </a>
-                        </div>
-
-                        <div class="col-lg-4 col-md-6">
-                            <a href="project-single.html">
-                                <div class="hover rounded-1 relative overflow-hidden text-light">
-                                    <div class="abs p-40 top-0 z-3">
-                                        <img src="images/misc/up-right-arrow-white.webp" class="w-10 mb-3 wow scaleIn"
-                                            alt="">
-                                    </div>
-                                    <div class="abs p-40 bottom-0 z-3">
-                                        <h3>SunSmart Office</h3>
-                                        <p class="mb-0 hover-mh-60">Solar Battery Storage</p>
-                                    </div>
-                                    <div class="hover-op-05 bg-dark abs w-100 h-100 top-0 start-0 z-2"></div>
-                                    <img src="images/projects/6.webp" class="w-100 hover-scale-1-2" alt="">
-                                    <div class="gradient-edge-bottom h-50"></div>
-                                </div>
-                            </a>
-                        </div>
-
-
-                    </div>
-
+                <div class="sw-overlay"
+                    style="background: linear-gradient(135deg, rgba(14, 34, 18, 0.88) 0%, rgba(10, 25, 12, 0.72) 60%, rgba(5, 15, 8, 0.6) 100%);">
                 </div>
             </section>
 
-            <section class="bg-dark text-light pt-60 pb-40">
+            <!-- STICKY CATEGORY NAV -->
+            <div class="product-nav-bar">
+                <div class="container">
+                    <div class="product-nav-scroll">
+                        <a href="#solar-panels" class="product-nav-link active">Solar Panels</a>
+                        <a href="#hybrid-inverters" class="product-nav-link">Hybrid Inverters</a>
+                        <a href="#solar-batteries" class="product-nav-link">Batteries</a>
+                        <a href="#solar-generators" class="product-nav-link">Solar Generators</a>
+                        <a href="#solar-street-lights" class="product-nav-link">Street Lights</a>
+                        <a href="#online-ups" class="product-nav-link">Online UPS</a>
+                        <a href="#mppt-controllers" class="product-nav-link">MPPT Controllers</a>
+                        <a href="#power-gateway" class="product-nav-link">Power Gateway</a>
+                        <a href="#led-bulbs" class="product-nav-link">LED Bulbs</a>
+                        <a href="#solar-fans" class="product-nav-link">Solar Fans</a>
+                        <a href="#solar-mounts" class="product-nav-link">Mount Accessories</a>
+                        <a href="#mc4-connectors" class="product-nav-link">MC4 Connectors</a>
+                        <a href="#other-products" class="product-nav-link">Surge & Protection</a>
+                        <a href="#order-inquiry-section" class="product-nav-link"
+                            style="background: var(--button-color); color: #fff;">Inquire / Order</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SECTION 1: SOLAR PANELS (4 COLUMNS) -->
+            <section id="solar-panels" class="product-category-section">
                 <div class="container">
                     <div class="row">
                         <div class="col-lg-12">
-                            <div class="relative">
-                                <div class="row g-4 grid-divider sm-hide">
-                                    <div class="col-lg-4 col-md-6 mb-sm-30">
-                                        <div class="d-flex justify-content-center">
-                                            <i class="fs-60 id-color icon_phone"></i>
-                                            <div class="ms-3">
-                                                <h4 class="mb-0">Need Our Services?</h4>
-                                                <p>Call: +1 800 987 654</p>
-                                            </div>
-                                        </div>
-                                    </div>
+                            <div class="category-header">
+                                <span class="category-badge">High-Efficiency Photovoltaic</span>
+                                <h2 class="category-title">Solar Panels</h2>
+                                <p class="text-secondary" style="font-size: 16px; max-width: 700px;">
+                                    Tier-1 photovoltaic modules designed for superior high-power performance, extreme
+                                    durability, and industry-leading 30-plus year warranties.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
 
-                                    <div class="col-lg-4 col-md-6 mb-sm-30">
-                                        <div class="d-flex justify-content-center">
-                                            <i class="fs-60 id-color icon_clock"></i>
-                                            <div class="ms-3">
-                                                <h4 class="mb-0">Work Hours</h4>
-                                                <p>Mon to Sat 08:00 - 17:00</p>
-                                            </div>
-                                        </div>
+                    <div class="row g-4">
+                        <!-- Card 1: Jinko -->
+                        <div class="col-lg-3 col-md-6">
+                            <div class="gennex-card">
+                                <div class="gennex-card-img-wrap">
+                                    <img src="images/products/Jinko-solar-panel.jpg"
+                                        alt="Jinko Solar Panels" loading="lazy">
+                                </div>
+                                <div class="gennex-card-body">
+                                    <h4 class="gennex-card-title">Jinko Solar Panels</h4>
+                                    <p class="gennex-card-text">
+                                        Range of quality Jinko solar panels with 30-plus years warranty, enhanced
+                                        reliability, outstanding low light performance, lower operating temperature,
+                                        exceptional PID resistance, and high compatibility.
+                                    </p>
+                                    <div class="gennex-card-footer">
+                                        <a href="contact.html"
+                                            class="btn-main btn-line fx-slide w-100 text-center"><span>Learn
+                                                More</span></a>
                                     </div>
+                                </div>
+                            </div>
+                        </div>
 
-                                    <div class="col-lg-4 col-md-6 mb-sm-30">
-                                        <div class="d-flex justify-content-center">
-                                            <i class="fs-60 id-color icon_mail"></i>
-                                            <div class="ms-3">
-                                                <h4 class="mb-0">Email Us</h4>
-                                                <p>support@solaria.com</p>
-                                            </div>
-                                        </div>
+                        <!-- Card 2: Astronergy -->
+                        <div class="col-lg-3 col-md-6">
+                            <div class="gennex-card">
+                                <div class="gennex-card-img-wrap">
+                                    <img src="images/products/5-ASTRO-N5-600W.jpg"
+                                        alt="Astronergy Solar Panel" loading="lazy">
+                                </div>
+                                <div class="gennex-card-body">
+                                    <h4 class="gennex-card-title">Astronergy Solar Panel</h4>
+                                    <p class="gennex-card-text">
+                                        Astronergy is a leading global solar energy company, specializing in the
+                                        production of high-quality solar panels and renewable energy solutions with
+                                        cutting-edge n-type TOPCon module cell architecture.
+                                    </p>
+                                    <div class="gennex-card-footer">
+                                        <a href="contact.html"
+                                            class="btn-main btn-line fx-slide w-100 text-center"><span>Learn
+                                                More</span></a>
                                     </div>
+                                </div>
+                            </div>
+                        </div>
 
+                        <!-- Card 3: Canadian Solar -->
+                        <div class="col-lg-3 col-md-6">
+                            <div class="gennex-card">
+                                <div class="gennex-card-img-wrap">
+                                    <img src="images/products/Canadian-solar-panel.jpg"
+                                        alt="Canadian Solar Panels" loading="lazy">
+                                </div>
+                                <div class="gennex-card-body">
+                                    <h4 class="gennex-card-title">Canadian Solar Panels</h4>
+                                    <p class="gennex-card-text">
+                                        Canadian Solar Panel’s innovative Mono and Poly Crystalline Panels module cell
+                                        technology can now offer small format high-density modules of very high
+                                        efficiency with comprehensive 30+ years warranty.
+                                    </p>
+                                    <div class="gennex-card-footer">
+                                        <a href="contact.html"
+                                            class="btn-main btn-line fx-slide w-100 text-center"><span>Learn
+                                                More</span></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Card 4: JA Solar -->
+                        <div class="col-lg-3 col-md-6">
+                            <div class="gennex-card">
+                                <div class="gennex-card-img-wrap">
+                                    <img src="images/products/JA-Solar-Panels-1.jpg"
+                                        alt="JA Solar Panels" loading="lazy">
+                                </div>
+                                <div class="gennex-card-body">
+                                    <h4 class="gennex-card-title">JA Solar Panels</h4>
+                                    <p class="gennex-card-text">
+                                        JA Solar is a globally trusted leader in photovoltaic (PV) technology, dedicated
+                                        to delivering high-efficiency, long-lasting solar solutions that help homes,
+                                        businesses, and communities transition smoothly to clean power.
+                                    </p>
+                                    <div class="gennex-card-footer">
+                                        <a href="contact.html"
+                                            class="btn-main btn-line fx-slide w-100 text-center"><span>Learn
+                                                More</span></a>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -299,11 +667,559 @@
                 </div>
             </section>
 
+            <!-- SECTION 2: HYBRID INVERTERS (4 COLUMNS) -->
+            <section id="hybrid-inverters" class="product-category-section">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="category-header">
+                                <span class="category-badge">Power Conversion & Management</span>
+                                <h2 class="category-title">Hybrid Inverters</h2>
+                                <p class="text-secondary" style="font-size: 16px; max-width: 700px;">
+                                    Smart energy storage and conversion inverters ranging from 1.2KVA to 15KVA,
+                                    compatible with on-grid, off-grid, and generator hybrid configurations.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row g-4">
+                        <!-- Inverter 1: Gennex Inverters -->
+                        <div class="col-lg-3 col-md-6">
+                            <div class="gennex-card">
+                                <div class="gennex-card-img-wrap">
+                                    <img src="images/products/Inverters2.png"
+                                        alt="Gennex Hybrid Inverters" loading="lazy">
+                                </div>
+                                <div class="gennex-card-body">
+                                    <h4 class="gennex-card-title">Gennex Inverters</h4>
+                                    <p class="gennex-card-text">
+                                        Gennex Hybrid Inverters are manufactured from the very latest technology used in
+                                        the industry globally. Ranging from 1.2KVA – 15KVA, applicable with both on-grid
+                                        and off-grid PV systems with user-friendly features.
+                                    </p>
+                                    <div class="gennex-card-footer">
+                                        <a href="contact.html"
+                                            class="btn-main btn-line fx-slide w-100 text-center"><span>Learn
+                                                More</span></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Inverter 2: Growatt Inverters -->
+                        <div class="col-lg-3 col-md-6">
+                            <div class="gennex-card">
+                                <div class="gennex-card-img-wrap">
+                                    <img src="images/products/growatt-inverters.png"
+                                        alt="Growatt Inverters" loading="lazy">
+                                </div>
+                                <div class="gennex-card-body">
+                                    <h4 class="gennex-card-title">Growatt Inverters</h4>
+                                    <p class="gennex-card-text">
+                                        Growatt offers a comprehensive lineup of intelligent solar inverter solutions
+                                        suitable for residential, commercial and utility-scale solar installations with
+                                        robust remote app monitoring and MPPT trackers.
+                                    </p>
+                                    <div class="gennex-card-footer">
+                                        <a href="contact.html"
+                                            class="btn-main btn-line fx-slide w-100 text-center"><span>Learn
+                                                More</span></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Inverter 3: Sorotec Inverters -->
+                        <div class="col-lg-3 col-md-6">
+                            <div class="gennex-card">
+                                <div class="gennex-card-img-wrap">
+                                    <img src="images/products/3-2kva-REVO-VM-II-PRO-inverter-front-view.jpg"
+                                        alt="Sorotec Inverters" loading="lazy">
+                                </div>
+                                <div class="gennex-card-body">
+                                    <h4 class="gennex-card-title">Sorotec Inverters</h4>
+                                    <p class="gennex-card-text">
+                                        High-performance power solutions designed to provide reliable and efficient
+                                        energy backup for homes, offices, and industrial applications with seamless
+                                        automatic changeover and high surge resilience.
+                                    </p>
+                                    <div class="gennex-card-footer">
+                                        <a href="contact.html"
+                                            class="btn-main btn-line fx-slide w-100 text-center"><span>Learn
+                                                More</span></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Inverter 4: LuxPower Inverters -->
+                        <div class="col-lg-3 col-md-6">
+                            <div class="gennex-card">
+                                <div class="gennex-card-img-wrap">
+                                    <img src="images/products/Luxpower-kwh-hybrid-inverter.png"
+                                        alt="LuxPower Inverters" loading="lazy">
+                                </div>
+                                <div class="gennex-card-body">
+                                    <h4 class="gennex-card-title">LuxPower Inverters</h4>
+                                    <p class="gennex-card-text">
+                                        Lux Power hybrid inverters provide intelligent power management for residential
+                                        and commercial solar installations, offering parallel stacking, generator
+                                        auto-start, and seamless lithium battery integration.
+                                    </p>
+                                    <div class="gennex-card-footer">
+                                        <a href="contact.html"
+                                            class="btn-main btn-line fx-slide w-100 text-center"><span>Learn
+                                                More</span></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- SECTION 3: BATTERIES & SOLAR GENERATORS (2-COLUMN CARDS) -->
+            <section id="solar-batteries" class="product-category-section">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="category-header">
+                                <span class="category-badge">Energy Storage & Portability</span>
+                                <h2 class="category-title">Batteries & All-in-One Solar Generators</h2>
+                                <p class="text-secondary" style="font-size: 16px; max-width: 700px;">
+                                    Deep cycle battery storage and integrated plug-and-play solar power generators for
+                                    residential, commercial, and emergency backup power.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row g-4">
+                        <!-- Battery Card -->
+                        <div class="col-lg-6">
+                            <div class="gennex-feature-card">
+                                <div class="gennex-feature-img-wrap">
+                                    <img src="images/products/Batteries.png"
+                                        alt="Solar Inverter Batteries" loading="lazy">
+                                </div>
+                                <h3 class="gennex-feature-title">Solar Inverter Batteries</h3>
+                                <p class="gennex-card-text">
+                                    Our deep cycle solar batteries are created for optimum efficiency and extended
+                                    lifespan. Lithium (LiFePO4), Trojan, and Newmax inverter batteries with 10-plus
+                                    years life span and industry-leading warranties. We sell and supply dry cell,
+                                    tubular, and lithium solar batteries of various capacities engineered for extreme
+                                    cycles.
+                                </p>
+                                <div class="mt-3">
+                                    <a href="contact.html" class="btn-main fx-slide"><span>Learn More</span></a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Generator Card -->
+                        <div class="col-lg-6" id="solar-generators">
+                            <div class="gennex-feature-card">
+                                <div class="gennex-feature-img-wrap">
+                                    <img src="images/products/Gennex-Solar-Generator-Mobile-View.png"
+                                        alt="All in One Solar Generators" loading="lazy">
+                                </div>
+                                <h3 class="gennex-feature-title">All in One Solar Generators</h3>
+                                <p class="gennex-card-text">
+                                    Best quality solar generators available in different sizes. From 1.2Kw for powering
+                                    your essential household and office appliances to 11Kw for powering all heavy
+                                    electrical appliances. Prime-quality solar generators with zero fuel, zero
+                                    emissions, quiet operation, and extended durability.
+                                </p>
+                                <div class="mt-3">
+                                    <a href="contact.html" class="btn-main fx-slide"><span>Learn More</span></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- SECTION 4: STREET LIGHTS & ONLINE UPS (2-COLUMN CARDS) -->
+            <section id="solar-street-lights" class="product-category-section">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="category-header">
+                                <span class="category-badge">Lighting & Critical Power</span>
+                                <h2 class="category-title">Solar Street Lights & Online UPS</h2>
+                                <p class="text-secondary" style="font-size: 16px; max-width: 700px;">
+                                    Smart outdoor street lighting solutions and enterprise-grade uninterruptible power
+                                    supplies for sensitive IT, hospital, and mission-critical installations.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row g-4">
+                        <!-- Street Lights -->
+                        <div class="col-lg-6">
+                            <div class="gennex-feature-card">
+                                <div class="gennex-feature-img-wrap">
+                                    <img src="images/products/Solar-Street-Light-With-Motion-Sensor.png"
+                                        alt="All in One Solar Street Lights" loading="lazy">
+                                </div>
+                                <h3 class="gennex-feature-title">All in One Solar Street Lights</h3>
+                                <p class="gennex-card-text">
+                                    Anern All-in-One Solar Street Lights offer a streamlined and efficient solution for
+                                    outdoor lighting needs. By integrating solar panels, long-life lithium batteries,
+                                    high-lumen LED light sources, and intelligent microwave motion sensors into a single
+                                    compact unit, these street lights simplify installation and eliminate cabling.
+                                </p>
+                                <div class="mt-3">
+                                    <a href="contact.html" class="btn-main fx-slide"><span>Learn More</span></a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Online UPS -->
+                        <div class="col-lg-6" id="online-ups">
+                            <div class="gennex-feature-card">
+                                <div class="gennex-feature-img-wrap">
+                                    <img src="images/products/ups-battery-backup.png"
+                                        alt="Online Uninterruptible Power Supply" loading="lazy">
+                                </div>
+                                <h3 class="gennex-feature-title">Online Uninterruptible Power Supply (UPS)</h3>
+                                <p class="gennex-card-text">
+                                    Online double-conversion UPS systems manufactured using the latest inverter
+                                    technologies. Designed to deliver true sine wave power and zero-millisecond transfer
+                                    protection for critical loads such as data center servers, healthcare medical
+                                    machinery, IT networks, telecoms towers, and banking institutions.
+                                </p>
+                                <div class="mt-3">
+                                    <a href="contact.html" class="btn-main fx-slide"><span>Learn More</span></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- SECTION 5: MPPT CONTROLLERS & POWER GATEWAY (SPLIT ROWS) -->
+            <section id="mppt-controllers" class="product-category-section">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="category-header">
+                                <span class="category-badge">Solar Charge & Smart Automation</span>
+                                <h2 class="category-title">Charge Controllers & Power Gateways</h2>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- MPPT Controller Row -->
+                    <div class="gennex-split-row">
+                        <div class="row g-0 align-items-center">
+                            <div class="col-lg-5">
+                                <div class="gennex-split-img-box">
+                                    <img src="images/products/MPPT-solar-charge-controller.jpg"
+                                        alt="External MPPT Solar Charge Controllers" loading="lazy">
+                                </div>
+                            </div>
+                            <div class="col-lg-7">
+                                <div class="gennex-split-content">
+                                    <span class="category-badge mb-2">Efficiency Up To 98%</span>
+                                    <h3 class="gennex-feature-title">External MPPT Solar Charge Controllers</h3>
+                                    <p class="gennex-card-text mb-3">
+                                        Compared to traditional PWM solar charge controllers, Maximum Power Point
+                                        Tracking (MPPT) technology allows your solar panels to operate at their optimum
+                                        power output voltage continuously, providing higher efficiency up to 98% with
+                                        minimal thermal loss.
+                                    </p>
+                                    <p class="gennex-card-text mb-4">
+                                        When integrated with inverters, solar panels, and external battery packs, it
+                                        forms an autonomous, high-yield standalone solar power system that guarantees
+                                        faster recharge cycles and battery longevity.
+                                    </p>
+                                    <div>
+                                        <a href="contact.html" class="btn-main fx-slide"><span>Learn More</span></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Multi-Functional Power Gateway Row -->
+                    <div class="gennex-split-row" id="power-gateway">
+                        <div class="row g-0 align-items-center flex-lg-row-reverse">
+                            <div class="col-lg-5">
+                                <div class="gennex-split-img-box">
+                                    <img src="images/products/Multi-functional-power-gateway-gennex-solar-installation.png"
+                                        alt="Multi-Functional Power Gateway" loading="lazy">
+                                </div>
+                            </div>
+                            <div class="col-lg-7">
+                                <div class="gennex-split-content">
+                                    <span class="category-badge mb-2">Intelligent Changeover Box</span>
+                                    <h3 class="gennex-feature-title">Multi-Functional Power Gateway</h3>
+                                    <p class="gennex-card-text mb-3">
+                                        The multi-functional power gateway protects your home and industrial appliances
+                                        from destructive power surges of all kinds while functioning as the perfect
+                                        automatic changeover box.
+                                    </p>
+                                    <p class="gennex-card-text mb-4">
+                                        Engineered for seamless interconnection between multiple power sources (utility
+                                        grid, generator, and solar PV). The device enables safe, prioritized, and
+                                        automatic selection between available energy sources without manual
+                                        intervention.
+                                    </p>
+                                    <div>
+                                        <a href="contact.html" class="btn-main fx-slide"><span>Learn More</span></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- SECTION 6: LED BULBS & RECHARGEABLE FANS (2-COLUMN CARDS) -->
+            <section id="led-bulbs" class="product-category-section">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="category-header">
+                                <span class="category-badge">Energy Saving Appliances</span>
+                                <h2 class="category-title">LED Lighting & Rechargeable Solar Fans</h2>
+                                <p class="text-secondary" style="font-size: 16px; max-width: 700px;">
+                                    Energy-efficient indoor and outdoor illumination, paired with multi-hour
+                                    rechargeable solar cooling fans.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row g-4">
+                        <!-- LED Bulbs -->
+                        <div class="col-lg-6">
+                            <div class="gennex-feature-card">
+                                <div class="gennex-feature-img-wrap">
+                                    <img src="images/products/led-bulb.jpg"
+                                        alt="Variety of LED Bulbs" loading="lazy">
+                                </div>
+                                <h3 class="gennex-feature-title">Variety of LED Bulbs</h3>
+                                <p class="gennex-card-text">
+                                    Energy-saving LED bulbs designed with state-of-the-art thermal heatsinks to give
+                                    your home and commercial facility a brilliant luminous shine while dramatically
+                                    cutting electricity and battery consumption. Our range includes indoor downlights,
+                                    tube lamps, floodlights, and outdoor fixtures engineered to last over 30,000
+                                    operational hours.
+                                </p>
+                                <div class="mt-3">
+                                    <a href="contact.html" class="btn-main fx-slide"><span>Learn More</span></a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Rechargeable Fans -->
+                        <div class="col-lg-6" id="solar-fans">
+                            <div class="gennex-feature-card">
+                                <div class="gennex-feature-img-wrap">
+                                    <img src="images/products/Gennex_Solar_Fans-1.png"
+                                        alt="Rechargeable Fans With Solar Panel" loading="lazy">
+                                </div>
+                                <h3 class="gennex-feature-title">Rechargeable Fans With Solar Panel</h3>
+                                <p class="gennex-card-text">
+                                    Innovative solar rechargeable fans equipped with dedicated solar PV charging panels
+                                    and built-in lithium battery packs. Provides cooling comfort all day directly
+                                    powered by sunlight, and delivers up to 10–11 hours of whisper-quiet breeze at night
+                                    on a single full charge. Includes USB phone charging ports and multi-speed controls.
+                                </p>
+                                <div class="mt-3">
+                                    <a href="contact.html" class="btn-main fx-slide"><span>Learn More</span></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- SECTION 7: SOLAR MOUNTS, MC4 & PROTECTION (3 COLUMNS) -->
+            <section id="solar-mounts" class="product-category-section">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="category-header">
+                                <span class="category-badge">Hardware & Protection</span>
+                                <h2 class="category-title">Mount Accessories, MC4 Connectors & Protection</h2>
+                                <p class="text-secondary" style="font-size: 16px; max-width: 700px;">
+                                    Industrial-grade mounting hardware, certified solar connectors, and critical DC
+                                    surge protection devices for safety compliance.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row g-4">
+                        <!-- Mount Accessories -->
+                        <div class="col-lg-4 col-md-6">
+                            <div class="gennex-card">
+                                <div class="gennex-card-img-wrap">
+                                    <img src="images/products/solar-mount.png"
+                                        alt="Solar Mount Accessories" loading="lazy">
+                                </div>
+                                <div class="gennex-card-body">
+                                    <h4 class="gennex-card-title">Solar Mount Accessories</h4>
+                                    <p class="gennex-card-text">
+                                        We stock corrosion-resistant anodized aluminium mounting hardware including
+                                        aluminium rails, end clamps, mid clamps, splice bars, serrated L-feet, hanger
+                                        bolts, and tile roof brackets for roof and ground-mount installations.
+                                    </p>
+                                    <div class="gennex-card-footer">
+                                        <a href="contact.html"
+                                            class="btn-main btn-line fx-slide w-100 text-center"><span>Learn
+                                                More</span></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- MC4 Connectors -->
+                        <div class="col-lg-4 col-md-6" id="mc4-connectors">
+                            <div class="gennex-card">
+                                <div class="gennex-card-img-wrap">
+                                    <img src="images/products/MC4-Connectors-BM21-2.png"
+                                        alt="MC4 Connectors" loading="lazy">
+                                </div>
+                                <div class="gennex-card-body">
+                                    <h4 class="gennex-card-title">MC4 Solar Connectors</h4>
+                                    <p class="gennex-card-text">
+                                        Heavy-duty IP68 waterproof MC4 connectors including BA21, BM21, BM31 branch
+                                        connectors, CC4K, and CC10K solar cable connectors with UV resistance and secure
+                                        snap-in locking mechanisms for reliable high-voltage connections.
+                                    </p>
+                                    <div class="gennex-card-footer">
+                                        <a href="contact.html"
+                                            class="btn-main btn-line fx-slide w-100 text-center"><span>Learn
+                                                More</span></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Other Products / Surge Arrestor -->
+                        <div class="col-lg-4 col-md-6" id="other-products">
+                            <div class="gennex-card">
+                                <div class="gennex-card-img-wrap">
+                                    <img src="images/products/DC-surge-arrestor-1.png"
+                                        alt="DC Surge Arrestors & Protection" loading="lazy">
+                                </div>
+                                <div class="gennex-card-body">
+                                    <h4 class="gennex-card-title">Surge Protection & Accessories</h4>
+                                    <p class="gennex-card-text">
+                                        Critical circuit protection hardware to safeguard installations: AC Surge
+                                        Arrestors (Single & 3-Phase), DC Circuit Breakers 1000V-20A, DC Surge Arrestors
+                                        120V & 800V, enclosed battery racks, and DC isolator disconnect switches.
+                                    </p>
+                                    <div class="gennex-card-footer">
+                                        <a href="contact.html"
+                                            class="btn-main btn-line fx-slide w-100 text-center"><span>Learn
+                                                More</span></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- SECTION 8: ORDER / INQUIRY FORM & OFFICE CONTACTS -->
+            <section class="bg-dark text-light pt-60 pb-40">
+
+                <div class="container">
+
+                    <div class="row">
+
+                        <div class="col-lg-12">
+
+                            <div class="relative">
+
+                                <div class="row g-4 grid-divider sm-hide">
+
+                                    <div class="col-lg-4 col-md-6 mb-sm-30">
+
+                                        <div class="d-flex justify-content-center">
+
+                                            <i class="fa-solid fa-phone-volume fs-60 id-color"></i>
+
+                                            <div class="ms-3">
+
+                                                <h4 class="mb-0">Need Our Services?</h4>
+
+                                                <p>Call: +234 9076660060</p>
+
+                                            </div>
+
+                                        </div>
+
+                                    </div>
+
+
+
+                                    <div class="col-lg-4 col-md-6 mb-sm-30">
+
+                                        <div class="d-flex justify-content-center">
+
+                                            <i class="fa-solid fa-clock fs-60 id-color"></i>
+
+                                            <div class="ms-3">
+
+                                                <h4 class="mb-0">Work Hours</h4>
+
+                                                <p>Mon to Sat 08:00 - 17:00</p>
+
+                                            </div>
+
+                                        </div>
+
+                                    </div>
+
+
+
+                                    <div class="col-lg-4 col-md-6 mb-sm-30">
+
+                                        <div class="d-flex justify-content-center">
+
+                                            <i class="fa-solid fa-envelope fs-60 id-color"></i>
+
+                                            <div class="ms-3">
+
+                                                <h4 class="mb-0">Email Us</h4>
+
+                                                <p>hello@sungrid.com</p>
+
+                                            </div>
+
+                                        </div>
+
+                                    </div>
+
+
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </section>
+
         </div>
         <!-- content end -->
 
+
+
         <!-- footer begin -->
-        <footer class="section-dark">
+        <footer class="text-light section-dark">
             <div class="container relative z-2">
                 <div class="row gx-5">
                     <div class="col-lg-4 col-sm-6">
@@ -316,7 +1232,6 @@
                             power of the sun and reduce your energy bills while protecting
                             the planet.
                         </p>
-
                     </div>
 
                     <div class="col-lg-5 col-sm-12 order-lg-1 order-sm-2">
@@ -377,7 +1292,7 @@
                             <div class="fw-bold text-white d-flex align-items-center">
                                 <i class="icofont-phone me-2 id-color"></i><span>Call Us</span>
                             </div>
-                            +234 802 330 2030
+                            +234 9076660060
 
                             <div class="spacer-20"></div>
 
@@ -396,7 +1311,7 @@
                         <div class="col-md-12">
                             <div class="de-flex">
                                 <div class="de-flex-col">
-                                    &copy; 2025 - Sungrid
+                                    &copy; 2026 - Sungrid
                                 </div>
                                 <ul class="menu-simple">
                                     <li><a href="#">Terms &amp; Conditions</a></li>
@@ -415,7 +1330,6 @@
                     alt="Sungrid clean energy logo" />
             </div>
         </footer>
-
         <!-- footer end -->
     </div>
 
@@ -428,44 +1342,23 @@
 
         <div id="extra-content">
             <img src="images/sungrid-logo.png" class="w-150px" alt="Sungrid clean energy logo" />
-
             <div class="spacer-30-line"></div>
 
             <h5>Our Services</h5>
             <ul class="ul-check">
                 <li>Solar Panel Installation</li>
-                <li>Solar Panel Maintenance</li>
-                <li>Custom System Design</li>
-                <li>Solar Battery Storage</li>
-                <li>System Monitoring & Reporting</li>
-                <li>Solar Panel Upgrades</li>
+                <li>Solar Inverter & Battery Setup</li>
+                <li>Commercial Solar Engineering</li>
+                <li>Solar Street Light Projects</li>
+                <li>System Maintenance & Audits</li>
             </ul>
 
             <div class="spacer-30-line"></div>
 
             <h5>Contact Us</h5>
-            <div>
-                <i class="icofont-clock-time me-2 op-5"></i>Monday - Friday 08.00 -
-                18.00
-            </div>
-            <div>
-                <i class="icofont-location-pin me-2 op-5"></i>Plot 1504, Cadzone B06, after the Ministry of
-                Transportation,
-                Mabushi, Abuja
-            </div>
+            <div><i class="icofont-clock-time me-2 op-5"></i>Monday - Friday 08.00 - 18.00</div>
+            <div><i class="icofont-location-pin me-2 op-5"></i>Plot 1504, Cadzone B06, Mabushi, Abuja</div>
             <div><i class="icofont-envelope me-2 op-5"></i>hello@sungrid.com</div>
-
-            <div class="spacer-30-line"></div>
-
-            <h5>About Us</h5>
-            <p>
-                At Sungrid, we’re committed to delivering reliable, efficient, and
-                sustainable solar energy solutions. From residential installations to
-                commercial systems, we help you harness the power of the sun and
-                reduce your energy bills while protecting the planet.
-            </p>
-
-
         </div>
     </div>
 
@@ -477,9 +1370,65 @@
     <script src="js/custom-swiper-1.js"></script>
     <script src="js/custom-marquee.js"></script>
 
+    <script>
+        // Modal and form handling
+        document.addEventListener('DOMContentLoaded', function () {
+            // Setup modal triggers
+            const modalEl = document.getElementById('productModal');
+            const bsModal = new bootstrap.Modal(modalEl);
+            const modalTitleProduct = document.getElementById('modalSelectedProduct');
+            const modalInputProduct = document.getElementById('modalProductName');
+
+            document.querySelectorAll('.open-order-modal').forEach(btn => {
+                btn.addEventListener('click', function () {
+                    const prodName = this.getAttribute('data-product');
+                    modalTitleProduct.textContent = prodName;
+                    modalInputProduct.value = prodName;
+                    bsModal.show();
+                });
+            });
+
+            // Smooth scrolling and active link highlight on sticky nav
+            const navLinks = document.querySelectorAll('.product-nav-link');
+            const sections = document.querySelectorAll('.product-category-section');
+
+            window.addEventListener('scroll', function () {
+                let current = '';
+                sections.forEach(section => {
+                    const sectionTop = section.offsetTop - 150;
+                    if (window.scrollY >= sectionTop) {
+                        current = section.getAttribute('id');
+                    }
+                });
+
+                navLinks.forEach(link => {
+                    link.classList.remove('active');
+                    if (link.getAttribute('href') === '#' + current) {
+                        link.classList.add('active');
+                    }
+                });
+            });
+        });
+
+        function handleInquirySubmit() {
+            const successEl = document.getElementById('inquirySuccessMsg');
+            successEl.classList.remove('d-none');
+            document.getElementById('productInquiryForm').reset();
+            setTimeout(() => {
+                successEl.classList.add('d-none');
+            }, 6000);
+        }
+
+        function handleModalSubmit() {
+            const successEl = document.getElementById('modalSuccessMsg');
+            successEl.classList.remove('d-none');
+            document.getElementById('modalOrderForm').reset();
+            setTimeout(() => {
+                successEl.classList.add('d-none');
+                bootstrap.Modal.getInstance(document.getElementById('productModal')).hide();
+            }, 3000);
+        }
+    </script>
 </body>
-
-
-<!-- Mirrored from https://www.designesia.com/themes/solaria/projects.html by HTTrack Website Copier/3.x [XR&CO], Sun, 04 Oct 2026 20:13:36 GMT -->
 
 </html>

@@ -1,0 +1,12 @@
+# Set the default behavior to automatically normalize line endings
+* text=auto
+
+# Explicitly declare text files you want to always normalize to LF in the repo
+*.html text
+*.css text
+*.js text
+*.json text
+
+# Denote binary files that should not be touched
+*.png filter=lfs diff=lfs merge=lfs -text
+*.jpg filter=lfs diff=lfs merge=lfs -text
