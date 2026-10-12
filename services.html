@@ -1,36 +1,138 @@
 <!DOCTYPE html>
+
 <html lang="en">
 
 
-<!-- Mirrored from https://www.designesia.com/themes/solaria/services.html by HTTrack Website Copier/3.x [XR&CO], Sun, 04 Oct 2026 20:13:32 GMT -->
+
 <head>
-    <title>Solaria - Solar Energy HTML Template</title>
+
+    <title>Sungrid | Solar Energy</title>
+
     <link rel="icon" href="images/icon.webp" type="image/gif" sizes="16x16">
+
     <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
-    <meta content="width=device-width, initial-scale=1.0" name="viewport" >
-    <meta content="Solaria - Ecology & Solar Energy HTML Template" name="description" >
-    <meta content="" name="keywords" >
-    <meta content="" name="author" >
+
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+    <meta content="Sungrid | Clean Energy, Brighter Tomorrow" name="description">
+
+    <meta content="" name="keywords">
+
+    <meta content="" name="author">
+
     <!-- CSS Files
+
     ================================================== -->
+
     <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css" id="bootstrap">
-    <link href="css/plugins.css" rel="stylesheet" type="text/css" >
-    <link href="css/swiper.css" rel="stylesheet" type="text/css" >
-    <link href="css/style.css" rel="stylesheet" type="text/css" >
+
+    <link href="css/plugins.css" rel="stylesheet" type="text/css">
+
+    <link href="css/swiper.css" rel="stylesheet" type="text/css">
+
+    <link href="css/style.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
     <!-- color scheme -->
-    <link id="colors" href="css/colors/scheme-1.css" rel="stylesheet" type="text/css" >
+
+    <link id="colors" href="css/colors/scheme-1.css" rel="stylesheet" type="text/css">
+
+    <style>
+        /* Modern Polish for Service Grid Cards */
+        .service-card-wrap .p-30 {
+            box-shadow: 0 12px 32px rgba(53, 69, 31, 0.08);
+            border: 1px solid rgba(184, 201, 154, 0.35);
+            transition: transform 0.35s cubic-bezier(0.165, 0.84, 0.44, 1), box-shadow 0.35s ease, border-color 0.35s ease;
+        }
+
+        .service-card-wrap:hover .p-30 {
+            transform: translateY(-6px);
+            box-shadow: 0 20px 42px rgba(53, 69, 31, 0.15);
+            border-color: rgba(113, 132, 71, 0.55);
+        }
+
+        .service-card-wrap .circle.bg-color {
+            box-shadow: 0 6px 16px rgba(113, 132, 71, 0.3);
+            transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.3s ease;
+        }
+
+        .service-card-wrap:hover .circle.bg-color {
+            transform: scale(1.1) rotate(6deg);
+            box-shadow: 0 10px 22px rgba(83, 107, 46, 0.45);
+        }
+
+        .service-card-wrap a:hover h4 {
+            color: var(--primary-color, #718447) !important;
+        }
+
+        .service-quote-pill {
+            background: rgba(113, 132, 71, 0.12);
+            color: var(--accent-color, #536B2E);
+            text-decoration: none;
+            transition: all 0.25s ease;
+        }
+
+        .service-quote-pill:hover {
+            background: var(--button-color, #536B2E);
+            color: #ffffff !important;
+        }
+
+        .btn-service-filter {
+            background: transparent;
+            color: var(--text-primary, #35451F);
+            border: none;
+            padding: 7px 18px;
+            border-radius: 30px;
+            font-size: 13.5px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.25s ease;
+        }
+
+        .btn-service-filter:hover {
+            background: rgba(113, 132, 71, 0.1);
+            color: var(--accent-color, #536B2E);
+        }
+
+        .btn-service-filter.active {
+            background: var(--button-color, #536B2E);
+            color: #ffffff;
+            box-shadow: 0 4px 12px rgba(83, 107, 46, 0.3);
+        }
+
+        .service-item {
+            transition: opacity 0.3s ease, transform 0.3s ease;
+        }
+
+        .service-item.is-hidden {
+            display: none !important;
+        }
+    </style>
+
+
 
 </head>
 
+
+
 <body>
+
     <div id="wrapper">
+
         <a href="#" id="back-to-top"></a>
 
+
+
         <!-- preloader begin -->
+
         <div id="de-loader"></div>
+
         <!-- preloader end -->
 
+
+
         <!-- header begin -->
+
         <header class="transparent">
             <div id="topbar">
                 <div class="container">
@@ -38,20 +140,17 @@
                         <div class="col-lg-12">
                             <div class="d-flex justify-content-between xs-hide">
                                 <div class="d-flex">
-                                    <div class="topbar-widget me-5"><a href="#"><i class="icofont-location-pin"></i>100 Solar Ave, San Diego, CA</a></div>
-                                    <div class="topbar-widget me-5"><a href="#"><i class="icofont-phone"></i>+1 800 987 654</a></div>
-                                    <div class="topbar-widget me-5"><a href="#"><i class="icofont-envelope"></i>support@solaria.com</a></div>
-                                </div>
-
-                                <div class="d-flex">
-                                    <div class="social-icons">
-                                        <a href="#"><i class="fa-brands fa-facebook fa-lg"></i></a>
-                                        <a href="#"><i class="fa-brands fa-x-twitter fa-lg"></i></a>
-                                        <a href="#"><i class="fa-brands fa-youtube fa-lg"></i></a>
-                                        <a href="#"><i class="fa-brands fa-pinterest fa-lg"></i></a>
-                                        <a href="#"><i class="fa-brands fa-instagram fa-lg"></i></a>
+                                    <div class="topbar-widget me-5">
+                                        <a href="#"><i class="icofont-location-pin"></i>Mabushi, F.C.T., Abuja</a>
+                                    </div>
+                                    <div class="topbar-widget me-5">
+                                        <a href="#"><i class="icofont-phone"></i>+234 9076660060</a>
+                                    </div>
+                                    <div class="topbar-widget me-5">
+                                        <a href="#"><i class="icofont-envelope"></i>hello@sungrid.com</a>
                                     </div>
                                 </div>
+
                             </div>
                         </div>
                     </div>
@@ -67,8 +166,9 @@
                                 <!-- logo begin -->
                                 <div id="logo">
                                     <a href="index.html">
-                                        <img class="logo-main" src="images/logo-white.webp" alt="" >
-                                        <img class="logo-mobile" src="images/logo-white.webp" alt="" >
+                                        <img class="logo-main" src="images/sungrid-logo.png"
+                                            alt="Sungrid clean energy logo" />
+                                        <!-- <img class="logo-mobile" src="images/sungrid-logo.png" alt="Sungrid clean energy logo" /> -->
                                     </a>
                                 </div>
                                 <!-- logo end -->
@@ -76,50 +176,30 @@
                             <div class="de-flex-col header-col-mid">
                                 <!-- mainemenu begin -->
                                 <ul id="mainmenu">
-                                    <li><a class="menu-item" href="index.html">Home</a>
-                                        <ul>
-                                            <li><a href="index.html">Homepage 1</a></li>
-                                            <li><a href="homepage-2.html">Homepage 2</a></li>
-                                            <li><a href="homepage-3.html">Homepage 3</a></li>
-                                            <li><a href="homepage-4.html">Homepage 4</a></li>
-                                            <li><a href="homepage-5.html">Homepage 5</a></li>
-                                        </ul>
+                                    <li>
+                                        <a class="menu-item" href="index.html">Home</a>
                                     </li>
-                                    <li><a class="menu-item" href="services.html">Services</a>
-                                        <ul>
-                                            <li><a href="services.html">All Services Style 1</a></li>
-                                            <li><a href="services-2.html">All Services Style 2</a></li>
-                                            <li><a href="service-single.html">Service Single</a></li>
-                                            <li><a href="industries.html">Industries We Serve</a></li>
-                                            <li><a href="service-area.html">Service Area</a></li>
-                                            <li><a href="how-it-works.html">How It Works</a></li>
-                                            <li><a href="faq.html">FAQ</a></li>
-                                        </ul>
+                                    <li>
+                                        <a class="menu-item" href="about.html">About Us</a>
                                     </li>
-                                    <li><a class="menu-item" href="projects.html">Projects</a>
-                                        <ul>
-                                            <li><a href="projects.html">Projects Default</a></li>
-                                            <li><a href="projects-slider.html">Projects Slider</a></li>
-                                            <li><a href="projects-carousel.html">Projects Carousel</a></li>
-                                            <li><a href="project-single.html">Project Details</a></li>
-                                        </ul>
+                                    <li>
+                                        <a class="menu-item" href="services.html">Services</a>
                                     </li>
-                                    <li><a class="menu-item" href="#">Pages</a>
-                                        <ul>
-                                            <li><a href="about.html">About Us</a></li>
-                                            <li><a href="team.html">Our Team</a></li>
-                                            <li><a href="careers.html">Careers</a></li>
-                                            <li><a href="testimonials.html">Testimonials</a></li>
-                                        </ul>
+                                    <li>
+                                        <a class="menu-item" href="product.html">Product</a>
                                     </li>
-                                    <li><a class="menu-item" href="blog.html">Blog</a></li>
-                                    <li><a class="menu-item" href="contact.html">Contact</a></li>
+
+                                    <li>
+                                        <a class="menu-item" href="contact.html">Contact</a>
+                                    </li>
                                 </ul>
                                 <!-- mainmenu end -->
                             </div>
                             <div class="de-flex-col">
                                 <div class="menu_side_area">
-                                    <a href="get-a-quote.html" class="btn-main btn-line fx-slide hover-white"><span>Get a Quote</span></a>
+                                    <a href="solar_calculator_module/calculator-page.html"
+                                        class="btn-main btn-line fx-slide hover-white"><span>Get a
+                                            Calculator</span></a>
                                     <span id="menu-btn"></span>
                                 </div>
 
@@ -133,321 +213,839 @@
                 </div>
             </div>
         </header>
+
         <!-- header end -->
+
         <!-- content begin -->
+
         <div class="no-bottom no-top" id="content">
+
+
 
             <div id="top"></div>
 
+
+
             <section id="subheader" class="bg-dark text-light relative jarallax">
-                <img src="images/background/w2.webp" class="jarallax-img" alt="">
+
+                <img src="images/background/teamg4.jpg" class="jarallax-img" alt="SunGrid Clean Energy Services">
+
                 <div class="container relative z-2">
+
                     <div class="row gy-4 gx-5 align-items-center">
-                        <div class="col-lg-12">
+
+                        <div class="col-lg-7">
+
                             <div class="spacer-double sm-hide"></div>
-                            <h5 class="wow fadeInUp">Power Your Future with Clean Energy</h5>
-                            <h1 class="mb-3 wow fadeInUp" data-wow-delay=".2s">Our Service</h1>
-                            <div class="border-bottom mb-3"></div>
-                            <ul class="crumb wow fadeInUp">
+
+                            <div
+                                class="d-inline-flex align-items-center gap-2 px-3 py-1 mb-3 rounded-pill wow fadeInUp">
+                                <h5 class="wow fadeInUp">Clean Energy Solutions</h5>
+                            </div>
+
+                            <h1 class="mb-3 wow fadeInUp" data-wow-delay=".2s"
+                                style="font-size: clamp(2.4rem, 4.5vw, 3.8rem); line-height: 1.15; font-weight: 800; letter-spacing: -0.5px;">
+                                Our Services
+                            </h1>
+
+                            <p class="lead mb-4 wow fadeInUp" data-wow-delay=".3s"
+                                style="font-size: 1.15rem; line-height: 1.65; max-width: 580px; color: rgba(255, 255, 255, 0.88);">
+                                Engineered for maximum efficiency, sustainability, and zero downtime. Discover our
+                                end-to-end solar installations, battery storage, and 24/7 maintenance solutions.
+                            </p>
+
+                            <div class="d-flex flex-wrap align-items-center gap-3 mb-4 wow fadeInUp"
+                                data-wow-delay=".4s">
+                                <a href="#services-grid" class="btn-main fx-slide"><span>Explore Services</span></a>
+                                <a href="contact.html" class="btn-main btn-line fx-slide hover-white"><span>Contact
+                                        Us</span></a>
+                            </div>
+
+                            <div class="border-bottom mb-3 opacity-25" style="max-width: 480px;"></div>
+
+                            <ul class="crumb mb-0 wow fadeInUp" data-wow-delay=".5s" style="margin-bottom: 0;">
                                 <li><a href="index.html">Home</a></li>
                                 <li class="active">Our Services</li>
-                            </ul>   
+                            </ul>
+
                         </div>
+
+                        <div class="col-lg-5 wow fadeInRight" data-wow-delay=".3s">
+                            <div class="row g-3">
+                                <div class="col-6">
+                                    <div class="p-3 p-lg-4 rounded-3 h-100"
+                                        style="background: rgba(0, 0, 0, 0.35); border: 1px solid rgba(255, 255, 255, 0.1); backdrop-filter: blur(8px);">
+                                        <div class="d-flex align-items-center gap-2 mb-1">
+                                            <i class="fa-solid fa-solar-panel text-warning fs-18"></i>
+                                            <h3 class="text-white mb-0 fw-bold fs-24"><span class="timer" data-to="50"
+                                                    data-speed="2500">0</span>+</h3>
+                                        </div>
+                                        <p class="text-white-50 mb-0 fs-13">Installations Done</p>
+                                    </div>
+                                </div>
+                                <div class="col-6">
+                                    <div class="p-3 p-lg-4 rounded-3 h-100"
+                                        style="background: rgba(0, 0, 0, 0.35); border: 1px solid rgba(255, 255, 255, 0.1); backdrop-filter: blur(8px);">
+                                        <div class="d-flex align-items-center gap-2 mb-1">
+                                            <i class="fa-solid fa-shield-halved text-warning fs-18"></i>
+                                            <h3 class="text-white mb-0 fw-bold fs-24"><span class="timer" data-to="2"
+                                                    data-speed="2000">0</span> Yrs</h3>
+                                        </div>
+                                        <p class="text-white-50 mb-0 fs-13">Panel Warranty</p>
+                                    </div>
+                                </div>
+                                <div class="col-6">
+                                    <div class="p-3 p-lg-4 rounded-3 h-100"
+                                        style="background: rgba(0, 0, 0, 0.35); border: 1px solid rgba(255, 255, 255, 0.1); backdrop-filter: blur(8px);">
+                                        <div class="d-flex align-items-center gap-2 mb-1">
+                                            <i class="fa-solid fa-bolt-lightning text-warning fs-18"></i>
+                                            <h3 class="text-white mb-0 fw-bold fs-24"><span class="timer" data-to="100"
+                                                    data-speed="2500">0</span>%</h3>
+                                        </div>
+                                        <p class="text-white-50 mb-0 fs-13">Power Reliability</p>
+                                    </div>
+                                </div>
+                                <div class="col-6">
+                                    <div class="p-3 p-lg-4 rounded-3 h-100"
+                                        style="background: rgba(0, 0, 0, 0.35); border: 1px solid rgba(255, 255, 255, 0.1); backdrop-filter: blur(8px);">
+                                        <div class="d-flex align-items-center gap-2 mb-1">
+                                            <i class="fa-solid fa-headset text-warning fs-18"></i>
+                                            <h3 class="text-white mb-0 fw-bold fs-24"><span class="timer" data-to="24"
+                                                    data-speed="2000">0</span>/7</h3>
+                                        </div>
+                                        <p class="text-white-50 mb-0 fs-13">Support & Care</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
                     </div>
+
                 </div>
 
                 <div class="gradient-edge-bottom h-50"></div>
-                <div class="sw-overlay"></div>
+
+                <div class="sw-overlay"
+                    style="background: linear-gradient(135deg, rgba(14, 34, 18, 0.88) 0%, rgba(10, 25, 12, 0.72) 60%, rgba(5, 15, 8, 0.6) 100%);">
+                </div>
+
             </section>
-             
-            <section>
+
+
+
+            <section id="services-grid" class="bg-light">
+
                 <div class="container">
 
-                    <div class="row g-4">
-                        <div class="col-lg-4 col-sm-6">
-                            <div class="hover">
+                    <!-- Section Header -->
+                    <div class="row g-4 justify-content-center mb-5">
+                        <div class="col-lg-7 text-center">
+                            <div class="subtitle wow fadeInUp mb-2">Clean Energy Solutions</div>
+                            <h2 class="wow fadeInUp" data-wow-delay=".1s">
+                                Engineered for Peak Efficiency <span class="op-3">& Zero Downtime</span>
+                            </h2>
+                            <p class="lead mb-0 wow fadeInUp text-muted" data-wow-delay=".2s">
+                                Turnkey residential, commercial, and off-grid solar energy solutions designed for
+                                Nigerian homes and businesses.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Filter Bar -->
+                    <div class="text-center mb-5 pb-2 wow fadeInUp" data-wow-delay=".25s">
+                        <div class="d-inline-flex flex-wrap justify-content-center gap-2 p-2 bg-white rounded-pill shadow-sm"
+                            style="border: 1px solid rgba(184, 201, 154, 0.4);">
+                            <button type="button" class="btn-service-filter active" data-filter="all">All Services
+                                (9)</button>
+                            <button type="button" class="btn-service-filter"
+                                data-filter="residential">Residential</button>
+                            <button type="button" class="btn-service-filter"
+                                data-filter="commercial">Commercial</button>
+                            <button type="button" class="btn-service-filter" data-filter="storage">Storage &
+                                Off-Grid</button>
+                            <button type="button" class="btn-service-filter" data-filter="maintenance">Maintenance &
+                                Care</button>
+                        </div>
+                    </div>
+
+                    <div class="row g-4" id="servicesGridRow">
+
+                        <!-- Card 1: Solar Panel Installation -->
+                        <div class="col-lg-4 col-sm-6 service-item" data-category="residential">
+                            <div class="hover service-card-wrap">
                                 <div class="relative overflow-hidden">
+                                    <span class="abs top-0 start-0 m-3 px-3 py-1 rounded-pill text-white fs-12 fw-700"
+                                        style="background: rgba(14, 34, 18, 0.78); backdrop-filter: blur(6px); border: 1px solid rgba(255, 255, 255, 0.2); z-index: 2;">
+                                        Residential Solar
+                                    </span>
                                     <a href="service-single.html" class="d-block hover">
                                         <div class="relative overflow-hidden rounded-1">
-                                            <img src="images/services/1.webp" class="w-100 hover-scale-1-2" alt="">
+                                            <img src="images/services/1.webp" class="w-100 hover-scale-1-2"
+                                                alt="Solar Panel Installation"
+                                                style="height: 250px; object-fit: cover;">
                                         </div>
                                     </a>
                                     <div class="p-30 relative bg-white rounded-1 mx-4 mt-min-100">
                                         <div class="abs top-0 end-0 mt-min-30 me-4 circle bg-color w-60px h-60px">
-                                            <a href="project-single.html">
-                                                <img src="images/misc/up-right-arrow.webp" class="w-60px p-20" alt="">
+                                            <a href="service-single.html"
+                                                class="w-100 h-100 d-flex align-items-center justify-content-center"
+                                                aria-label="Solar Panel Installation">
+                                                <i class="fa-solid fa-solar-panel text-dark"
+                                                    style="font-size: 24px;"></i>
                                             </a>
                                         </div>
-                                        <h4>Solar Panel Installation</h4>
-                                        <p class="mb-0">Fast, safe, and certified installation by experienced technicians.</p>
+                                        <div class="subtitle s2 mb-1 fs-12">Turnkey Solar</div>
+                                        <a href="service-single.html" class="text-dark">
+                                            <h4 class="mb-2">Solar Panel Installation</h4>
+                                        </a>
+                                        <p class="mb-2 text-muted fs-14">
+                                            Fast, safe, and certified installation custom-engineered for private homes,
+                                            duplexes, and estates.
+                                        </p>
+                                        <div class="d-flex align-items-center gap-2 mb-3 fs-13 text-secondary">
+                                            <i class="fa-solid fa-circle-check text-success fs-13"></i>
+                                            <span>Tier-1 Monocrystalline & 25-Yr Warranty</span>
+                                        </div>
+                                        <div class="pt-3 border-top d-flex align-items-center justify-content-between">
+                                            <a href="service-single.html"
+                                                class="fw-bold fs-13 text-dark d-inline-flex align-items-center gap-1 hover-color">
+                                                <span>Learn Details</span> <i class="fa-solid fa-arrow-right fs-11"></i>
+                                            </a>
+                                            <a href="contact.html"
+                                                class="fs-12 fw-600 px-3 py-1 rounded-pill service-quote-pill">
+                                                Get Quote
+                                            </a>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
 
-                        <div class="col-lg-4 col-sm-6">
-                            <div class="hover">
+                        <!-- Card 2: Solar Panel Maintenance -->
+                        <div class="col-lg-4 col-sm-6 service-item" data-category="maintenance">
+                            <div class="hover service-card-wrap">
                                 <div class="relative overflow-hidden">
+                                    <span class="abs top-0 start-0 m-3 px-3 py-1 rounded-pill text-white fs-12 fw-700"
+                                        style="background: rgba(14, 34, 18, 0.78); backdrop-filter: blur(6px); border: 1px solid rgba(255, 255, 255, 0.2); z-index: 2;">
+                                        Maintenance
+                                    </span>
                                     <a href="service-single.html" class="d-block hover">
                                         <div class="relative overflow-hidden rounded-1">
-                                            <img src="images/services/2.webp" class="w-100 hover-scale-1-2" alt="">
+                                            <img src="images/services/2.webp" class="w-100 hover-scale-1-2"
+                                                alt="Solar Panel Maintenance" style="height: 250px; object-fit: cover;">
                                         </div>
                                     </a>
                                     <div class="p-30 relative bg-white rounded-1 mx-4 mt-min-100">
                                         <div class="abs top-0 end-0 mt-min-30 me-4 circle bg-color w-60px h-60px">
-                                            <a href="project-single.html">
-                                                <img src="images/misc/up-right-arrow.webp" class="w-60px p-20" alt="">
+                                            <a href="service-single.html"
+                                                class="w-100 h-100 d-flex align-items-center justify-content-center"
+                                                aria-label="Solar Panel Maintenance">
+                                                <i class="fa-solid fa-screwdriver-wrench text-dark"
+                                                    style="font-size: 24px;"></i>
                                             </a>
                                         </div>
-                                        <h4>Solar Panel Maintenance</h4>
-                                        <p class="mb-0">Ensure peak performance with regular inspections and cleaning.</p>
+                                        <div class="subtitle s2 mb-1 fs-12">Peak Performance</div>
+                                        <a href="service-single.html" class="text-dark">
+                                            <h4 class="mb-2">Solar Panel Maintenance</h4>
+                                        </a>
+                                        <p class="mb-2 text-muted fs-14">
+                                            Ensure peak output with routine deionized washing, string testing, and
+                                            preventative electrical checks.
+                                        </p>
+                                        <div class="d-flex align-items-center gap-2 mb-3 fs-13 text-secondary">
+                                            <i class="fa-solid fa-circle-check text-success fs-13"></i>
+                                            <span>Dust Clearing & Rapid 24h Response</span>
+                                        </div>
+                                        <div class="pt-3 border-top d-flex align-items-center justify-content-between">
+                                            <a href="service-single.html"
+                                                class="fw-bold fs-13 text-dark d-inline-flex align-items-center gap-1 hover-color">
+                                                <span>Learn Details</span> <i class="fa-solid fa-arrow-right fs-11"></i>
+                                            </a>
+                                            <a href="contact.html"
+                                                class="fs-12 fw-600 px-3 py-1 rounded-pill service-quote-pill">
+                                                Get Quote
+                                            </a>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
 
-                        <div class="col-lg-4 col-sm-6">
-                            <div class="hover">
+                        <!-- Card 3: Custom System Design -->
+                        <div class="col-lg-4 col-sm-6 service-item" data-category="commercial residential">
+                            <div class="hover service-card-wrap">
                                 <div class="relative overflow-hidden">
+                                    <span class="abs top-0 start-0 m-3 px-3 py-1 rounded-pill text-white fs-12 fw-700"
+                                        style="background: rgba(14, 34, 18, 0.78); backdrop-filter: blur(6px); border: 1px solid rgba(255, 255, 255, 0.2); z-index: 2;">
+                                        Engineering
+                                    </span>
                                     <a href="service-single.html" class="d-block hover">
                                         <div class="relative overflow-hidden rounded-1">
-                                            <img src="images/services/3.webp" class="w-100 hover-scale-1-2" alt="">
+                                            <img src="images/services/3.webp" class="w-100 hover-scale-1-2"
+                                                alt="Custom System Design" style="height: 250px; object-fit: cover;">
                                         </div>
                                     </a>
                                     <div class="p-30 relative bg-white rounded-1 mx-4 mt-min-100">
                                         <div class="abs top-0 end-0 mt-min-30 me-4 circle bg-color w-60px h-60px">
-                                            <a href="project-single.html">
-                                                <img src="images/misc/up-right-arrow.webp" class="w-60px p-20" alt="">
+                                            <a href="service-single.html"
+                                                class="w-100 h-100 d-flex align-items-center justify-content-center"
+                                                aria-label="Custom System Design">
+                                                <i class="fa-solid fa-compass-drafting text-dark"
+                                                    style="font-size: 24px;"></i>
                                             </a>
                                         </div>
-                                        <h4>Custom System Design</h4>
-                                        <p class="mb-0">We create efficient solar setups tailored to your energy goals.</p>
+                                        <div class="subtitle s2 mb-1 fs-12">CAD & Modeling</div>
+                                        <a href="service-single.html" class="text-dark">
+                                            <h4 class="mb-2">Custom System Design</h4>
+                                        </a>
+                                        <p class="mb-2 text-muted fs-14">
+                                            Tailored architectural engineering, 3D irradiance simulations, and
+                                            electrical schematics for optimal yield.
+                                        </p>
+                                        <div class="d-flex align-items-center gap-2 mb-3 fs-13 text-secondary">
+                                            <i class="fa-solid fa-circle-check text-success fs-13"></i>
+                                            <span>3D Sun Path Modeling & Payback Plan</span>
+                                        </div>
+                                        <div class="pt-3 border-top d-flex align-items-center justify-content-between">
+                                            <a href="service-single.html"
+                                                class="fw-bold fs-13 text-dark d-inline-flex align-items-center gap-1 hover-color">
+                                                <span>Learn Details</span> <i class="fa-solid fa-arrow-right fs-11"></i>
+                                            </a>
+                                            <a href="contact.html"
+                                                class="fs-12 fw-600 px-3 py-1 rounded-pill service-quote-pill">
+                                                Get Quote
+                                            </a>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
 
-                        <div class="col-lg-4 col-sm-6">
-                            <div class="hover">
+                        <!-- Card 4: Solar Battery Storage -->
+                        <div class="col-lg-4 col-sm-6 service-item" data-category="storage">
+                            <div class="hover service-card-wrap">
                                 <div class="relative overflow-hidden">
+                                    <span class="abs top-0 start-0 m-3 px-3 py-1 rounded-pill text-white fs-12 fw-700"
+                                        style="background: rgba(14, 34, 18, 0.78); backdrop-filter: blur(6px); border: 1px solid rgba(255, 255, 255, 0.2); z-index: 2;">
+                                        Energy Storage
+                                    </span>
                                     <a href="service-single.html" class="d-block hover">
                                         <div class="relative overflow-hidden rounded-1">
-                                            <img src="images/services/4.webp" class="w-100 hover-scale-1-2" alt="">
+                                            <img src="images/services/4.jpg" class="w-100 hover-scale-1-2"
+                                                alt="Solar Battery Storage" style="height: 250px; object-fit: cover;">
                                         </div>
                                     </a>
                                     <div class="p-30 relative bg-white rounded-1 mx-4 mt-min-100">
                                         <div class="abs top-0 end-0 mt-min-30 me-4 circle bg-color w-60px h-60px">
-                                            <a href="project-single.html">
-                                                <img src="images/misc/up-right-arrow.webp" class="w-60px p-20" alt="">
+                                            <a href="service-single.html"
+                                                class="w-100 h-100 d-flex align-items-center justify-content-center"
+                                                aria-label="Solar Battery Storage">
+                                                <i class="fa-solid fa-battery-full text-dark"
+                                                    style="font-size: 24px;"></i>
                                             </a>
                                         </div>
-                                        <h4>Solar Battery Storage</h4>
-                                        <p class="mb-0">Capture and store surplus solar energy for use anytime, even during outages.</p>
+                                        <div class="subtitle s2 mb-1 fs-12">Zero Blackouts</div>
+                                        <a href="service-single.html" class="text-dark">
+                                            <h4 class="mb-2">Solar Battery Storage</h4>
+                                        </a>
+                                        <p class="mb-2 text-muted fs-14">
+                                            Capture surplus clean power with high-capacity Lithium (LiFePO4) storage for
+                                            24/7 overnight autonomy.
+                                        </p>
+                                        <div class="d-flex align-items-center gap-2 mb-3 fs-13 text-secondary">
+                                            <i class="fa-solid fa-circle-check text-success fs-13"></i>
+                                            <span>6,000+ Cycle Life & 10ms UPS Transfer</span>
+                                        </div>
+                                        <div class="pt-3 border-top d-flex align-items-center justify-content-between">
+                                            <a href="service-single.html"
+                                                class="fw-bold fs-13 text-dark d-inline-flex align-items-center gap-1 hover-color">
+                                                <span>Learn Details</span> <i class="fa-solid fa-arrow-right fs-11"></i>
+                                            </a>
+                                            <a href="contact.html"
+                                                class="fs-12 fw-600 px-3 py-1 rounded-pill service-quote-pill">
+                                                Get Quote
+                                            </a>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
 
-                        <div class="col-lg-4 col-sm-6">
-                            <div class="hover">
+                        <!-- Card 5: System Monitoring & Reporting -->
+                        <div class="col-lg-4 col-sm-6 service-item" data-category="maintenance">
+                            <div class="hover service-card-wrap">
                                 <div class="relative overflow-hidden">
+                                    <span class="abs top-0 start-0 m-3 px-3 py-1 rounded-pill text-white fs-12 fw-700"
+                                        style="background: rgba(14, 34, 18, 0.78); backdrop-filter: blur(6px); border: 1px solid rgba(255, 255, 255, 0.2); z-index: 2;">
+                                        Smart Telemetry
+                                    </span>
                                     <a href="service-single.html" class="d-block hover">
                                         <div class="relative overflow-hidden rounded-1">
-                                            <img src="images/services/5.webp" class="w-100 hover-scale-1-2" alt="">
+                                            <img src="images/services/5.jpg" class="w-100 hover-scale-1-2"
+                                                alt="System Monitoring & Reporting"
+                                                style="height: 250px; object-fit: cover;">
                                         </div>
                                     </a>
                                     <div class="p-30 relative bg-white rounded-1 mx-4 mt-min-100">
                                         <div class="abs top-0 end-0 mt-min-30 me-4 circle bg-color w-60px h-60px">
-                                            <a href="project-single.html">
-                                                <img src="images/misc/up-right-arrow.webp" class="w-60px p-20" alt="">
+                                            <a href="service-single.html"
+                                                class="w-100 h-100 d-flex align-items-center justify-content-center"
+                                                aria-label="System Monitoring & Reporting">
+                                                <i class="fa-solid fa-chart-line text-dark"
+                                                    style="font-size: 24px;"></i>
                                             </a>
                                         </div>
-                                        <h4>System Monitoring & Reporting</h4>
-                                        <p class="mb-0">Track performance in real time and get detailed system health reports.</p>
+                                        <div class="subtitle s2 mb-1 fs-12">Live Telemetry</div>
+                                        <a href="service-single.html" class="text-dark">
+                                            <h4 class="mb-2">System Monitoring & Reporting</h4>
+                                        </a>
+                                        <p class="mb-2 text-muted fs-14">
+                                            Track generation and consumption in real-time on your phone, with automated
+                                            health and fault alerts.
+                                        </p>
+                                        <div class="d-flex align-items-center gap-2 mb-3 fs-13 text-secondary">
+                                            <i class="fa-solid fa-circle-check text-success fs-13"></i>
+                                            <span>24/7 Mobile App & Automated Diagnostics</span>
+                                        </div>
+                                        <div class="pt-3 border-top d-flex align-items-center justify-content-between">
+                                            <a href="service-single.html"
+                                                class="fw-bold fs-13 text-dark d-inline-flex align-items-center gap-1 hover-color">
+                                                <span>Learn Details</span> <i class="fa-solid fa-arrow-right fs-11"></i>
+                                            </a>
+                                            <a href="contact.html"
+                                                class="fs-12 fw-600 px-3 py-1 rounded-pill service-quote-pill">
+                                                Get Quote
+                                            </a>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
 
-                        <div class="col-lg-4 col-sm-6">
-                            <div class="hover">
+                        <!-- Card 6: Energy Efficiency & Thermal Audit -->
+                        <div class="col-lg-4 col-sm-6 service-item" data-category="maintenance commercial">
+                            <div class="hover service-card-wrap">
                                 <div class="relative overflow-hidden">
+                                    <span class="abs top-0 start-0 m-3 px-3 py-1 rounded-pill text-white fs-12 fw-700"
+                                        style="background: rgba(14, 34, 18, 0.78); backdrop-filter: blur(6px); border: 1px solid rgba(255, 255, 255, 0.2); z-index: 2;">
+                                        Auditing
+                                    </span>
                                     <a href="service-single.html" class="d-block hover">
                                         <div class="relative overflow-hidden rounded-1">
-                                            <img src="images/services/6.webp" class="w-100 hover-scale-1-2" alt="">
+                                            <img src="images/team/p3.png" class="w-100 hover-scale-1-2"
+                                                alt="Energy Efficiency & Thermal Audit"
+                                                style="height: 250px; object-fit: cover;">
                                         </div>
                                     </a>
                                     <div class="p-30 relative bg-white rounded-1 mx-4 mt-min-100">
                                         <div class="abs top-0 end-0 mt-min-30 me-4 circle bg-color w-60px h-60px">
-                                            <a href="project-single.html">
-                                                <img src="images/misc/up-right-arrow.webp" class="w-60px p-20" alt="">
+                                            <a href="service-single.html"
+                                                class="w-100 h-100 d-flex align-items-center justify-content-center"
+                                                aria-label="Energy Efficiency & Thermal Audit">
+                                                <i class="fa-solid fa-magnifying-glass-chart text-dark"
+                                                    style="font-size: 24px;"></i>
                                             </a>
                                         </div>
-                                        <h4>Solar Panel Upgrades</h4>
-                                        <p class="mb-0">Boost energy output and efficiency with the latest panel technology.</p>
+                                        <div class="subtitle s2 mb-1 fs-12">Thermal Imaging</div>
+                                        <a href="service-single.html" class="text-dark">
+                                            <h4 class="mb-2">Energy & Thermal Audit</h4>
+                                        </a>
+                                        <p class="mb-2 text-muted fs-14">
+                                            Advanced FLIR infrared scans, phase balance checks, and energy leak
+                                            detection to maximize efficiency.
+                                        </p>
+                                        <div class="d-flex align-items-center gap-2 mb-3 fs-13 text-secondary">
+                                            <i class="fa-solid fa-circle-check text-success fs-13"></i>
+                                            <span>Infrared Hotspot & Leakage Analysis</span>
+                                        </div>
+                                        <div class="pt-3 border-top d-flex align-items-center justify-content-between">
+                                            <a href="service-single.html"
+                                                class="fw-bold fs-13 text-dark d-inline-flex align-items-center gap-1 hover-color">
+                                                <span>Learn Details</span> <i class="fa-solid fa-arrow-right fs-11"></i>
+                                            </a>
+                                            <a href="contact.html"
+                                                class="fs-12 fw-600 px-3 py-1 rounded-pill service-quote-pill">
+                                                Get Quote
+                                            </a>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
 
+                        <!-- Card 7: Solar EV Charging Stations -->
+                        <div class="col-lg-4 col-sm-6 service-item" data-category="residential commercial">
+                            <div class="hover service-card-wrap">
+                                <div class="relative overflow-hidden">
+                                    <span class="abs top-0 start-0 m-3 px-3 py-1 rounded-pill text-white fs-12 fw-700"
+                                        style="background: rgba(14, 34, 18, 0.78); backdrop-filter: blur(6px); border: 1px solid rgba(255, 255, 255, 0.2); z-index: 2;">
+                                        EV Mobility
+                                    </span>
+                                    <a href="service-single.html" class="d-block hover">
+                                        <div class="relative overflow-hidden rounded-1">
+                                            <img src="images/services/7.jpg" class="w-100 hover-scale-1-2"
+                                                alt="Solar EV Charging Stations"
+                                                style="height: 250px; object-fit: cover;">
+                                        </div>
+                                    </a>
+                                    <div class="p-30 relative bg-white rounded-1 mx-4 mt-min-100">
+                                        <div class="abs top-0 end-0 mt-min-30 me-4 circle bg-color w-60px h-60px">
+                                            <a href="service-single.html"
+                                                class="w-100 h-100 d-flex align-items-center justify-content-center"
+                                                aria-label="Solar EV Charging Stations">
+                                                <i class="fa-solid fa-charging-station text-dark"
+                                                    style="font-size: 24px;"></i>
+                                            </a>
+                                        </div>
+                                        <div class="subtitle s2 mb-1 fs-12">Clean Mobility</div>
+                                        <a href="service-single.html" class="text-dark">
+                                            <h4 class="mb-2">Solar EV Charging</h4>
+                                        </a>
+                                        <p class="mb-2 text-muted fs-14">
+                                            Level 2 and DC fast-charging wallboxes connected to your solar array for
+                                            100% fuel-free vehicle commuting.
+                                        </p>
+                                        <div class="d-flex align-items-center gap-2 mb-3 fs-13 text-secondary">
+                                            <i class="fa-solid fa-circle-check text-success fs-13"></i>
+                                            <span>Universal Type 2 / CCS & Excess Routing</span>
+                                        </div>
+                                        <div class="pt-3 border-top d-flex align-items-center justify-content-between">
+                                            <a href="service-single.html"
+                                                class="fw-bold fs-13 text-dark d-inline-flex align-items-center gap-1 hover-color">
+                                                <span>Learn Details</span> <i class="fa-solid fa-arrow-right fs-11"></i>
+                                            </a>
+                                            <a href="contact.html"
+                                                class="fs-12 fw-600 px-3 py-1 rounded-pill service-quote-pill">
+                                                Get Quote
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
 
+                        <!-- Card 8: Commercial & Industrial Solar -->
+                        <div class="col-lg-4 col-sm-6 service-item" data-category="commercial">
+                            <div class="hover service-card-wrap">
+                                <div class="relative overflow-hidden">
+                                    <span class="abs top-0 start-0 m-3 px-3 py-1 rounded-pill text-white fs-12 fw-700"
+                                        style="background: rgba(14, 34, 18, 0.78); backdrop-filter: blur(6px); border: 1px solid rgba(255, 255, 255, 0.2); z-index: 2;">
+                                        Commercial
+                                    </span>
+                                    <a href="service-single.html" class="d-block hover">
+                                        <div class="relative overflow-hidden rounded-1">
+                                            <img src="images/services/8.webp" class="w-100 hover-scale-1-2"
+                                                alt="Commercial & Industrial Solar"
+                                                style="height: 250px; object-fit: cover;">
+                                        </div>
+                                    </a>
+                                    <div class="p-30 relative bg-white rounded-1 mx-4 mt-min-100">
+                                        <div class="abs top-0 end-0 mt-min-30 me-4 circle bg-color w-60px h-60px">
+                                            <a href="service-single.html"
+                                                class="w-100 h-100 d-flex align-items-center justify-content-center"
+                                                aria-label="Commercial & Industrial Solar">
+                                                <i class="fa-solid fa-building text-dark" style="font-size: 24px;"></i>
+                                            </a>
+                                        </div>
+                                        <div class="subtitle s2 mb-1 fs-12">C&I Solutions</div>
+                                        <a href="service-single.html" class="text-dark">
+                                            <h4 class="mb-2">Commercial & Industrial Solar</h4>
+                                        </a>
+                                        <p class="mb-2 text-muted fs-14">
+                                            MW-scale solar photovoltaic systems engineered for factories, corporate
+                                            plazas, and schools to slash diesel costs.
+                                        </p>
+                                        <div class="d-flex align-items-center gap-2 mb-3 fs-13 text-secondary">
+                                            <i class="fa-solid fa-circle-check text-success fs-13"></i>
+                                            <span>Peak Shaving & Diesel Displacement</span>
+                                        </div>
+                                        <div class="pt-3 border-top d-flex align-items-center justify-content-between">
+                                            <a href="service-single.html"
+                                                class="fw-bold fs-13 text-dark d-inline-flex align-items-center gap-1 hover-color">
+                                                <span>Learn Details</span> <i class="fa-solid fa-arrow-right fs-11"></i>
+                                            </a>
+                                            <a href="contact.html"
+                                                class="fs-12 fw-600 px-3 py-1 rounded-pill service-quote-pill">
+                                                Get Quote
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
 
+                        <!-- Card 9: Off-Grid Microgrid Systems -->
+                        <div class="col-lg-4 col-sm-6 service-item" data-category="storage">
+                            <div class="hover service-card-wrap">
+                                <div class="relative overflow-hidden">
+                                    <span class="abs top-0 start-0 m-3 px-3 py-1 rounded-pill text-white fs-12 fw-700"
+                                        style="background: rgba(14, 34, 18, 0.78); backdrop-filter: blur(6px); border: 1px solid rgba(255, 255, 255, 0.2); z-index: 2;">
+                                        Off-Grid
+                                    </span>
+                                    <a href="service-single.html" class="d-block hover">
+                                        <div class="relative overflow-hidden rounded-1">
+                                            <img src="images/services/9.webp" class="w-100 hover-scale-1-2"
+                                                alt="Off-Grid Microgrid Systems"
+                                                style="height: 250px; object-fit: cover;">
+                                        </div>
+                                    </a>
+                                    <div class="p-30 relative bg-white rounded-1 mx-4 mt-min-100">
+                                        <div class="abs top-0 end-0 mt-min-30 me-4 circle bg-color w-60px h-60px">
+                                            <a href="service-single.html"
+                                                class="w-100 h-100 d-flex align-items-center justify-content-center"
+                                                aria-label="Off-Grid Microgrid Systems">
+                                                <i class="fa-solid fa-tower-cell text-dark"
+                                                    style="font-size: 24px;"></i>
+                                            </a>
+                                        </div>
+                                        <div class="subtitle s2 mb-1 fs-12">100% Autonomous</div>
+                                        <a href="service-single.html" class="text-dark">
+                                            <h4 class="mb-2">Off-Grid Microgrids</h4>
+                                        </a>
+                                        <p class="mb-2 text-muted fs-14">
+                                            Autonomous clean power microgrids and solar pumping solutions built for
+                                            remote estates, lodges, and farms.
+                                        </p>
+                                        <div class="d-flex align-items-center gap-2 mb-3 fs-13 text-secondary">
+                                            <i class="fa-solid fa-circle-check text-success fs-13"></i>
+                                            <span>Zero Grid Reliance & Generator Sync</span>
+                                        </div>
+                                        <div class="pt-3 border-top d-flex align-items-center justify-content-between">
+                                            <a href="service-single.html"
+                                                class="fw-bold fs-13 text-dark d-inline-flex align-items-center gap-1 hover-color">
+                                                <span>Learn Details</span> <i class="fa-solid fa-arrow-right fs-11"></i>
+                                            </a>
+                                            <a href="contact.html"
+                                                class="fs-12 fw-600 px-3 py-1 rounded-pill service-quote-pill">
+                                                Get Quote
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
 
                     </div>
+
                 </div>
+
             </section>
+
+
 
             <section class="bg-dark text-light pt-60 pb-40">
+
                 <div class="container">
+
                     <div class="row">
+
                         <div class="col-lg-12">
+
                             <div class="relative">
+
                                 <div class="row g-4 grid-divider sm-hide">
-                                    <div class="col-lg-4 col-md-6 mb-sm-30">
-                                        <div class="d-flex justify-content-center">
-                                            <i class="fs-60 id-color icon_phone"></i>
-                                            <div class="ms-3">
-                                                <h4 class="mb-0">Need Our Services?</h4>
-                                                <p>Call: +1 800 987 654</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    
-                                    <div class="col-lg-4 col-md-6 mb-sm-30">
-                                        <div class="d-flex justify-content-center">
-                                            <i class="fs-60 id-color icon_clock"></i>
-                                            <div class="ms-3">
-                                                <h4 class="mb-0">Work Hours</h4>
-                                                <p>Mon to Sat 08:00 - 17:00</p>
-                                            </div>
-                                        </div>
-                                    </div>
 
                                     <div class="col-lg-4 col-md-6 mb-sm-30">
+
                                         <div class="d-flex justify-content-center">
-                                            <i class="fs-60 id-color icon_mail"></i>
+
+                                            <i class="fa-solid fa-phone-volume fs-60 id-color"></i>
+
                                             <div class="ms-3">
-                                                <h4 class="mb-0">Email Us</h4>
-                                                <p>support@solaria.com</p>
+
+                                                <h4 class="mb-0">Need Our Services?</h4>
+
+                                                <p>Call: +234 9076660060</p>
+
                                             </div>
+
                                         </div>
+
                                     </div>
-                                    
+
+
+
+                                    <div class="col-lg-4 col-md-6 mb-sm-30">
+
+                                        <div class="d-flex justify-content-center">
+
+                                            <i class="fa-solid fa-clock fs-60 id-color"></i>
+
+                                            <div class="ms-3">
+
+                                                <h4 class="mb-0">Work Hours</h4>
+
+                                                <p>Mon to Sat 08:00 - 17:00</p>
+
+                                            </div>
+
+                                        </div>
+
+                                    </div>
+
+
+
+                                    <div class="col-lg-4 col-md-6 mb-sm-30">
+
+                                        <div class="d-flex justify-content-center">
+
+                                            <i class="fa-solid fa-envelope fs-60 id-color"></i>
+
+                                            <div class="ms-3">
+
+                                                <h4 class="mb-0">Email Us</h4>
+
+                                                <p>hello@sungrid.com</p>
+
+                                            </div>
+
+                                        </div>
+
+                                    </div>
+
+
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+
+        </div>
+
+        <!-- content end -->
+
+
+
+        <!-- footer begin -->
+
+        <footer class="section-dark">
+            <div class="container relative z-2">
+                <div class="row gx-5">
+                    <div class="col-lg-4 col-sm-6">
+                        <img src="images/sungrid-logo.png" class="logo-footer" alt="Sungrid clean energy logo" />
+                        <div class="spacer-20"></div>
+                        <p>
+                            At Sungrid, we’re committed to delivering reliable, efficient,
+                            and sustainable solar energy solutions. From residential
+                            installations to commercial systems, we help you harness the
+                            power of the sun and reduce your energy bills while protecting
+                            the planet.
+                        </p>
+
+                    </div>
+
+                    <div class="col-lg-5 col-sm-12 order-lg-1 order-sm-2">
+                        <div class="row">
+                            <div class="col-lg-7 col-sm-6">
+                                <div class="widget">
+                                    <h5>Our Services</h5>
+                                    <ul>
+                                        <li>
+                                            <a href="service-single.html">Solar Panel Installation</a>
+                                        </li>
+                                        <li>
+                                            <a href="service-single.html">Solar Panel Maintenance</a>
+                                        </li>
+                                        <li>
+                                            <a href="service-single.html">Custom System Design</a>
+                                        </li>
+                                        <li>
+                                            <a href="service-single.html">Solar Battery Storage</a>
+                                        </li>
+                                        <li>
+                                            <a href="service-single.html">System Monitoring & Reporting</a>
+                                        </li>
+                                        <li>
+                                            <a href="service-single.html">Solar Panel Upgrades</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <div class="col-lg-5 col-sm-6">
+                                <div class="widget">
+                                    <h5>Company</h5>
+                                    <ul>
+                                        <li><a href="index.html">Home</a></li>
+                                        <li><a href="about.html">About Us</a></li>
+                                        <li><a href="services.html">Our Services</a></li>
+                                        <li><a href="product.html">Products</a></li>
+                                        <li><a href="contact.html">Contact</a></li>
+                                    </ul>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
-            </section>            
 
-        </div>
-        <!-- content end -->
+                    <div class="col-lg-3 col-sm-6 order-lg-2 order-sm-1">
+                        <div class="widget">
+                            <h5>Contact Us</h5>
 
-        <!-- footer begin -->
-        <footer class="section-dark">
-          <div class="container relative z-2">
-            <div class="row gx-5">
-              <div class="col-lg-4 col-sm-6">
-                <img src="images/logo-white.webp" class="logo-footer" alt="">
-                <div class="spacer-20"></div>
-                <p>At Solaria, we’re committed to delivering reliable, efficient, and sustainable solar energy solutions. From residential installations to commercial systems, we help you harness the power of the sun and reduce your energy bills while protecting the planet.</p>
+                            <div class="fw-bold text-white d-flex align-items-center">
+                                <i class="icofont-location-pin me-2 id-color"></i><span>Head Office</span>
+                            </div>
+                            Plot 1504, Cadzone B06, after the Ministry of Transportation,
+                            Mabushi, Abuja
 
-                <div class="social-icons mb-sm-30">
-                  <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
-                  <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
-                  <a href="#"><i class="fa-brands fa-whatsapp"></i></a>
-                  <a href="#"><i class="fa-brands fa-instagram"></i></a>
-                  <a href="#"><i class="fa-brands fa-youtube"></i></a>
-                </div>
-              </div>
+                            <div class="spacer-20"></div>
 
-              <div class="col-lg-5 col-sm-12 order-lg-1 order-sm-2">
-                <div class="row">
-                  <div class="col-lg-7 col-sm-6">
-                    <div class="widget">
-                      <h5>Our Services</h5>
-                      <ul>
-                          <li><a href="service-single.html">Solar Panel Installation</a></li>
-                          <li><a href="service-single.html">Solar Panel Maintenance</a></li>
-                          <li><a href="service-single.html">Custom System Design</a></li>
-                          <li><a href="service-single.html">Solar Battery Storage</a></li>
-                          <li><a href="service-single.html">System Monitoring & Reporting</a></li>
-                          <li><a href="service-single.html">Solar Panel Upgrades</a></li>
-                      </ul>
+                            <div class="fw-bold text-white d-flex align-items-center">
+                                <i class="icofont-phone me-2 id-color"></i><span>Call Us</span>
+                            </div>
+                            +234 9076660060
+
+                            <div class="spacer-20"></div>
+
+                            <div class="fw-bold text-white d-flex align-items-center">
+                                <i class="icofont-envelope me-2 id-color"></i><span>Email Us</span>
+                            </div>
+                            hello@sungrid.com
+                        </div>
                     </div>
-                  </div>
-
-                  <div class="col-lg-5 col-sm-6">
-                    <div class="widget">
-                      <h5>Company</h5>
-                      <ul>
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="services.html">Our Services</a></li>
-                        <li><a href="projects.html">Projects</a></li>
-                        <li><a href="about.html">About Us</a></li>
-                        <li><a href="blog.html">Blog</a></li>
-                        <li><a href="contact.html">Contact</a></li>
-                      </ul>
-                    </div>
-                  </div>
                 </div>
-              </div>
-
-              <div class="col-lg-3 col-sm-6 order-lg-2 order-sm-1">
-                <div class="widget">
-                  <h5>Contact Us</h5>
-
-                  <div class="fw-bold text-white d-flex align-items-center">
-                    <i class="icofont-location-pin me-2 id-color"></i><span>Head Office</span>
-                  </div>
-                  100 Solar Ave, San Diego, CA
-
-                  <div class="spacer-20"></div>
-
-                  <div class="fw-bold text-white d-flex align-items-center">
-                    <i class="icofont-phone me-2 id-color"></i><span>Call Us</span>
-                  </div>
-                  +1 800 987 654
-
-                  <div class="spacer-20"></div>
-
-                  <div class="fw-bold text-white d-flex align-items-center">
-                    <i class="icofont-envelope me-2 id-color"></i><span>Email Us</span>
-                  </div>
-                  support@solaria.com
-                </div>
-              </div>
             </div>
-          </div>
 
-          <div class="subfooter">
-            <div class="container">
-              <div class="row">
-                <div class="col-md-12">
-                  <div class="de-flex">
-                    <div class="de-flex-col">
-                      &copy; 2025 - Solaria by Designesia
+            <div class="subfooter">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="de-flex">
+                                <div class="de-flex-col">
+                                    &copy; 2026 - Sungrid
+                                </div>
+                                <ul class="menu-simple">
+                                    <li><a href="#">Terms &amp; Conditions</a></li>
+                                    <li><a href="#">Privacy Policy</a></li>
+                                </ul>
+                            </div>
+                        </div>
                     </div>
-                    <ul class="menu-simple">
-                      <li><a href="#">Terms &amp; Conditions</a></li>
-                      <li><a href="#">Privacy Policy</a></li>
-                    </ul>
-                  </div>
                 </div>
-              </div>
             </div>
-          </div>
 
-          <div class="abs w-50 end-0 bottom-0 op-3">
-              <img src="images/misc/c1.webp" class="w-100 rtl-hide wow fadeInRight" data-wow-duration="2s" alt="">
-              <img src="images/misc/c1-flip.webp" class="w-100 rtl-show wow fadeInLeft" data-wow-duration="2s" alt="">
-          </div>
+            <div class="abs w-50 end-0 bottom-0 op-3">
+                <img src="images/misc/c1.webp" class="w-100 rtl-hide wow fadeInRight" data-wow-duration="2s"
+                    alt="Sungrid clean energy logo" />
+                <img src="images/misc/c1-flip.webp" class="w-100 rtl-show wow fadeInLeft" data-wow-duration="2s"
+                    alt="Sungrid clean energy logo" />
+            </div>
         </footer>
 
         <!-- footer end -->
+
     </div>
 
     <!-- overlay content begin -->
+
     <div id="extra-wrap" class="text-light">
         <div id="btn-close">
             <span></span>
@@ -455,7 +1053,7 @@
         </div>
 
         <div id="extra-content">
-            <img src="images/logo-white.webp" class="w-150px" alt="">
+            <img src="images/sungrid-logo.png" class="w-150px" alt="Sungrid clean energy logo" />
 
             <div class="spacer-30-line"></div>
 
@@ -466,57 +1064,90 @@
                 <li>Custom System Design</li>
                 <li>Solar Battery Storage</li>
                 <li>System Monitoring & Reporting</li>
-                <li>Solar Panel Upgrades</li>
+                <li>Energy Efficiency & Thermal Audit</li>
+                <li>Solar EV Charging Stations</li>
+                <li>Commercial & Industrial Solar</li>
+                <li>Off-Grid Microgrid Systems</li>
             </ul>
 
             <div class="spacer-30-line"></div>
 
             <h5>Contact Us</h5>
-            <div><i class="icofont-clock-time me-2 op-5"></i>Monday - Friday 08.00 - 18.00</div>
-            <div><i class="icofont-location-pin me-2 op-5"></i>100 Solar Ave, San Diego, CA </div>
-            <div><i class="icofont-envelope me-2 op-5"></i>support@solaria.com</div>
+            <div>
+                <i class="icofont-clock-time me-2 op-5"></i>Monday - Friday 08.00 -
+                18.00
+            </div>
+            <div>
+                <i class="icofont-location-pin me-2 op-5"></i>Plot 1504, Cadzone B06, after the Ministry of
+                Transportation,
+                Mabushi, Abuja
+            </div>
+            <div><i class="icofont-envelope me-2 op-5"></i>hello@sungrid.com</div>
 
             <div class="spacer-30-line"></div>
 
             <h5>About Us</h5>
-            <p>At Solaria, we’re committed to delivering reliable, efficient, and sustainable solar energy solutions. From residential installations to commercial systems, we help you harness the power of the sun and reduce your energy bills while protecting the planet.</p>
+            <p>
+                At Sungrid, we’re committed to delivering reliable, efficient, and
+                sustainable solar energy solutions. From residential installations to
+                commercial systems, we help you harness the power of the sun and
+                reduce your energy bills while protecting the planet.
+            </p>
 
-            <div class="social-icons">
-                <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
-                <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
-                <a href="#"><i class="fa-brands fa-instagram"></i></a>
-                <a href="#"><i class="fa-brands fa-youtube"></i></a>
-                <a href="#"><i class="fa-brands fa-whatsapp"></i></a>
-            </div>
+
         </div>
     </div>
 
-    <div id="buy-now" class="show-on-scroll">
-        <a class="btn-buy" href="https://themeforest.net/item/solaria-solar-energy-html-template-rtl/59374335" target="_blank">Buy on <img src="demo/envato.png" class="" alt=""></a>
-    </div>
+    <!-- Javascript Files ================================================== -->
 
-    <div id="selector">
-        <div id="demo-rtl" class="sc-opt">
-            <div class="sc-icon">RTL</div><span class="sc-val">Click to Enable</span>
-        </div>
-        <div class="sc-opt sc-mt">
-            <div class="sc-icon"><i class="fa fa-eyedropper"></i></div>
-            <span class="opt tc1" data-color="scheme-1"></span>
-            <span class="opt tc2" data-color="scheme-2"></span>
-            <span class="opt tc3" data-color="scheme-3"></span>
-        </div>
-    </div>
-
-    <!-- Javascript Files
-    ================================================== -->
     <script src="js/plugins.js"></script>
+
     <script src="js/designesia.js"></script>
+
     <script src="js/swiper.js"></script>
+
     <script src="js/custom-swiper-1.js"></script>
+
     <script src="js/custom-marquee.js"></script>
+
+    <script>
+        // Interactive Service Grid Category Filtering
+        document.addEventListener('DOMContentLoaded', function () {
+            const filterBtns = document.querySelectorAll('.btn-service-filter');
+            const serviceItems = document.querySelectorAll('.service-item');
+
+            filterBtns.forEach(function (btn) {
+                btn.addEventListener('click', function () {
+                    const filter = this.getAttribute('data-filter');
+
+                    filterBtns.forEach(function (b) { b.classList.remove('active'); });
+                    this.classList.add('active');
+
+                    serviceItems.forEach(function (item) {
+                        const categories = (item.getAttribute('data-category') || '').split(' ');
+                        const match = filter === 'all' || categories.includes(filter);
+
+                        if (match) {
+                            item.classList.remove('is-hidden');
+                            item.style.opacity = '0';
+                            item.style.transform = 'translateY(10px)';
+                            setTimeout(function () {
+                                item.style.opacity = '1';
+                                item.style.transform = 'translateY(0)';
+                            }, 30);
+                        } else {
+                            item.style.opacity = '0';
+                            item.style.transform = 'translateY(10px)';
+                            setTimeout(function () {
+                                item.classList.add('is-hidden');
+                            }, 200);
+                        }
+                    });
+                });
+            });
+        });
+    </script>
 
 </body>
 
-
-<!-- Mirrored from https://www.designesia.com/themes/solaria/services.html by HTTrack Website Copier/3.x [XR&CO], Sun, 04 Oct 2026 20:13:33 GMT -->
 </html>

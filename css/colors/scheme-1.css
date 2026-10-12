@@ -1,8 +1,29 @@
-* {
+/* * {
   --primary-color: #FBEC6B;
   --primary-color-rgb: 251, 236, 107;
   --bg-dark-1: #163563;
   --bg-dark-2: #0f2647;
   --bg-dark-3: #1e1e1e;  
   --bg-dark-1-rgb: 22, 53, 99;
+} */
+
+/* Fresh Natural | Sage Green Theme */
+* {
+  --primary-color: #718447;
+  --primary-color-rgb: 113, 132, 71;
+  --secondary-color: #C8D8A9;
+  --accent-color: #536B2E;
+  --button-color: #536B2E;
+  --button-hover-color: #405521;
+  --background-color: #F1EBD7;
+  --surface-color: #E5DDC6;
+  --light-surface-color: #DCE7C5;
+  --text-primary: #35451F;
+  --text-secondary: #667052;
+  --border-soft: #B8C99A;
+  --highlight-color: #C9E2F3;
+  --bg-dark-1: #35451F;
+  --bg-dark-2: #263517;
+  --bg-dark-3: #405521;
+  --bg-dark-1-rgb: 53, 69, 31;
 }

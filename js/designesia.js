@@ -894,20 +894,14 @@
       * --------------------------------------------------*/
      function de_counter() {
          jQuery('.timer').each(function() {
-             var imagePos = jQuery(this).offset().top;
+             var $this = jQuery(this);
+             if ($this.data('counted')) return;
+             var imagePos = $this.offset().top;
              var topOfWindow = jQuery(window).scrollTop();
-             if (imagePos < topOfWindow + jQuery(window).height() && v_count === '0') {
-                 jQuery(function($) {
-                     // start all the timers
-                     jQuery('.timer').each(count);
-
-                     function count(options) {
-                         v_count = '1';
-                         var $this = jQuery(this);
-                         options = $.extend({}, options || {}, $this.data('countToOptions') || {});
-                         $this.countTo(options);
-                     }
-                 });
+             if (imagePos < topOfWindow + jQuery(window).height() + 100) {
+                 $this.data('counted', true);
+                 var options = $.extend({}, $this.data('countToOptions') || {});
+                 $this.countTo(options);
              }
          });
      }
@@ -1861,6 +1855,7 @@
          init(); 
          
          new WOW().init();
+         de_counter();
 
          
          // one page navigation
@@ -2224,6 +2219,7 @@
             itemSelector: '.grid-item'
         });
         grid_gallery();
+        de_counter();
         // $('#buy-now,#back-to-top ').hide();
     });
     
